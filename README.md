@@ -1,2 +1,6 @@
 # RanchEdge
-A central hub for all thing Sports and Betting
+## A Central Hub for all thing Sports News, Stats and Betting
+### Developed by: Kavith Ranchagoda
+
+## Updates:
+
