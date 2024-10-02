@@ -7,10 +7,11 @@
 ---
 ## <u>Pending Update Progress:</u>
 > [!IMPORTANT]
-> These are not currently pushed to the repo
+> These changes are not currently pushed to the repo
 ### **_1.1.0_**: API setup and Arbitrage Finder
-- [ ] Setup API access
-- [ ] Format to make different info accessible easier
+- [x] Setup API access
+- [x] Format to make different info accessible easier
+- [x] Odds Converter Function
 - [ ] Arbitrage Opportunity Finder function
 - [ ] Output Arbitrage Finder results to terminal in readable way
 
@@ -19,6 +20,10 @@
 ---
 
 ## <u>Updates:</u>
+### **_1.0.2_**: Odds Converter Function
+- Finished Odds Converter Function
+ 
+
 ### **_1.0.1_**: Reformat READ.ME
 - Established organization of READ.ME
 
