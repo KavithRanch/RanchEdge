@@ -9,7 +9,7 @@
 <u><h2 style="border-bottom: none;">Pending Update Progress:</h2></u>
 > [!IMPORTANT]
 > These are not currently pushed to the repo
-### **_1.1.0_**: API setup and Arbitrage Finder <span style="color:rgb(245, 197, 66);">&#9679;</span>
+### **_1.1.0_**: API setup and Arbitrage Finder `#ffffff`
 - [ ] Setup API access
 - [ ] Format to make different info accessible easier
 - [ ] Arbitrage Opportunity Finder function
