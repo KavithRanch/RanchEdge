@@ -3,9 +3,8 @@
 
 **_Developed by: Kavith Ranchagoda_**
 
----
 <br>
-
+---
 ## <u>Pending Update Progress:</u>
 > [!IMPORTANT]
 > These are not currently pushed to the repo
@@ -15,8 +14,8 @@
 - [ ] Arbitrage Opportunity Finder function
 - [ ] Output Arbitrage Finder results to terminal in readable way
 
----
 <br>
+---
 
 ## <u>Updates:</u>
 ### **_1.0.1_**: Reformat READ.ME
