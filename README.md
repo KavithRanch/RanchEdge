@@ -1,7 +1,6 @@
-# RanchEdge <sub>**_Developed by: Kavith Ranchagoda_**</sub>
-
+# RanchEdge 
 ### A Central Hub for all thing Sports News, Stats and Betting
-
+**_Developed by: Kavith Ranchagoda_**
 ---
 
 <u><h2 style="border-bottom: none;">Pending Update Progress:</h2></u>
