@@ -5,7 +5,7 @@
 
 ---
 
-<u><h2 style="border-bottom: none;">Pending Update Progress:</h2></u>
+## <u>Pending Update Progress:</u>
 > [!IMPORTANT]
 > These are not currently pushed to the repo
 ### **_1.1.0_**: API setup and Arbitrage Finder
@@ -16,7 +16,7 @@
 
 ---
 
-<u><h2 style="border-bottom: none;">Updates:</h2></u>
+## <u>Updates:</u>
 ### **_1.0.1_**: Reformat READ.ME
 - Established organization of READ.ME
 
