@@ -7,19 +7,26 @@
 ---
 ## <u>Pending Update Progress:</u>
 > [!IMPORTANT]
-> These changes are not currently pushed to the repo
+> Only checked changes are currently pushed to the repo
 ### **_1.1.0_**: API setup and Arbitrage Finder
 - [x] Setup API access
 - [x] Format to make different info accessible easier
 - [x] Odds Converter Function
-- [ ] Arbitrage Opportunity Finder function
-- [ ] Output Arbitrage Finder results to terminal in readable way
+- [x] Arbitrage Opportunity Finder function
+- [x] Output readable Arbitrage Finder results to terminal for all upcoming games
+- [ ] Make finder functional by comparing different bookmakers
 
 <br>
 
 ---
 
 ## <u>Updates:</u>
+### **_1.0.3_**: Arbitrage Function
+- Created Data Extraction function
+- Added a Date/Time Converter Function (for display)
+- Finished basic Arbitrage Finder Function
+- Outputs opportunities to console
+
 ### **_1.0.2_**: Odds Converter Function
 - Finished Odds Converter Function
  
