@@ -21,6 +21,10 @@
 ---
 
 ## <u>Updates:</u>
+### **_1.0.5_**: Time Function Complete + Annotations
+- Finished time function entirely
+- Added method docstrings and comments
+
 ### **_1.0.4_**: Time Function Patch
 - Modified to account for time zones
 
