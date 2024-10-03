@@ -21,6 +21,9 @@
 ---
 
 ## <u>Updates:</u>
+### **_1.0.4_**: Time Function Patch
+- Modified accounting for time zones
+
 ### **_1.0.3_**: Arbitrage Function
 - Created Data Extraction function
 - Added a Date/Time Converter Function (for display)

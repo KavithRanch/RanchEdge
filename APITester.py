@@ -24,6 +24,7 @@ response = [{"id":"b516611a4ade7c4d55fcde561ed71328","sport_key":"americanfootba
 
 # Main Variables
 
+
 def odds_converter(odd):
     if odd.is_integer():
         if odd > 0:
@@ -36,6 +37,7 @@ def odds_converter(odd):
         else:
             return str(round(-100 / (odd - 1)))
 
+
 def date_converter(date):
     date_obj = datetime.strptime(date, "%Y-%m-%d")
     formatted_date = date_obj.strftime("%A %B %dth %Y")
@@ -43,10 +45,18 @@ def date_converter(date):
 
 
 def time_converter(time):
-    if int(time[:1]) > 12:
-        return str(int(time[:1]) - 12) + ":" + time[3:5] + "PM"
+    if int(time[:2]) - 4 < 0:
+        time = str(int(time[:2]) + 20) + time[2:]
     else:
-        return str(time[:1]) + ":" + time[3:5] + "AM"
+        if int(time[:2]) - 4 < 10:
+            time = "0" + str(int(time[:2]) - 4) + time[2:]
+        else:
+            time = str(int(time[:2]) - 4) + time[2:]
+
+    if int(time[:2]) > 12:
+        return str(int(time[:2]) - 12) + ":" + time[3:5] + "PM"
+    else:
+        return str(time[1:2]) + ":" + time[3:5] + "AM"
 
 
 def extract_data(json_file):
@@ -68,8 +78,10 @@ def extract_data(json_file):
             print("No Arbitrage Opportunity as the total inverse probability is " + str(round((1 / home_odds + 1 / away_odds)*100, 2)) + "%\n")
 
 
-
 def arbitrage_calculator(h_odds, a_odds, total_bet):
+
+    #h_odds =
+    #a_odds =
 
     impl_prob = 1 / h_odds + 1 / a_odds
 
@@ -80,5 +92,6 @@ def arbitrage_calculator(h_odds, a_odds, total_bet):
         return home_bet, away_bet, profit
     else:
         return False
+
 
 extract_data(response)
