@@ -21,6 +21,11 @@
 ---
 
 ## <u>Updates:</u>
+### **_1.0.6_**: First iteration of checking across bookmakers
+- Checking across all bookmakers works at identifying opportunities
+- Outputs the correct amount to bet on either side
+- Function efficiency requires refinement
+
 ### **_1.0.5_**: Time Function Complete + Annotations
 - Finished time function entirely
 - Added method docstrings and comments
