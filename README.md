@@ -8,19 +8,22 @@
 ## <u>Pending Update Progress:</u>
 > [!IMPORTANT]
 > Only checked changes are currently pushed to the repo
-### **_1.1.0_**: API setup and Arbitrage Finder
-- [x] Setup API access
-- [x] Format to make different info accessible easier
-- [x] Odds Converter Function
-- [x] Arbitrage Opportunity Finder function
-- [x] Output readable Arbitrage Finder results to terminal for all upcoming games
-- [ ] Make finder functional by comparing different bookmakers
+### **_1.2.0_**: Setup Flask Backend
+- [ ] Setup Flask project
+- [ ] Define basic app structure
+- [ ] Create testing route and entry point
+- [ ] Integrate Arbitrage Finder 
 
 <br>
 
 ---
 
 ## <u>Updates:</u>
+### **_1.1.0_**: API setup and Initial Arbitrage Finder
+- Arbitrage Finder basic setup complete
+- Checks across 4 US bookies for NFL ML/Spreads
+- Outputs results in console
+
 ### **_1.0.6_**: First iteration of checking across bookmakers
 - Checking across all bookmakers works at identifying opportunities
 - Outputs the correct amount to bet on either side

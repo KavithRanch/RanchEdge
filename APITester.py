@@ -179,6 +179,7 @@ def extract_data(json_file):
         # Printing the betting market
         print("\nMarket: " + market)
 
+
         # Printing date/time to console
         time, diff_day = time_converter(date_time[11:-1])
         date = date_converter(date_time[:10], diff_day)
