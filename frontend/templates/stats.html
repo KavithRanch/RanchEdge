@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Stats - RanchEdge
+{% endblock %}
+
+
+{% block content %}
+    STAT LANDING PAGE
+    <a rel="stats" href="{{ url_for('home_page') }}">HOME PAGE</a>
+    <a rel="stats" href="{{ url_for('sport_stats_page', sport='nba') }}">NBA STATS</a>
+    <a rel="stats" href="{{ url_for('sport_stats_page', sport='nfl') }}">NFL STATS</a>
+{% endblock %}

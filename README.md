@@ -9,16 +9,20 @@
 > [!IMPORTANT]
 > Only checked changes are currently pushed to the repo
 ### **_1.2.0_**: Setup Flask Backend
-- [ ] Setup Flask project
-- [ ] Define basic app structure
-- [ ] Create testing route and entry point
-- [ ] Integrate Arbitrage Finder 
+- [x] Refractor project structure
+- [x] Setup Flask project and basic pages
+- [x] Setup known routes (empty renders)
+- [ ] Setup known models
 
 <br>
 
 ---
 
 ## <u>Updates:</u>
+### **_1.1.1_**: Project Restructure
+- Organized files moving towards industry structure
+- Setup basic flask project and basic routes
+
 ### **_1.1.0_**: API setup and Initial Arbitrage Finder
 - Arbitrage Finder basic setup complete
 - Checks across 4 US bookies for NFL ML/Spreads
