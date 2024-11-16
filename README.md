@@ -19,7 +19,7 @@
 ---
 
 ## <u>Updates:</u>
-### **_1.2.0_**: Flask Backend and NBA Models defined
+### :star: **_1.2.0_**: Flask Backend and NBA Models defined
 - All basic models for NBA are complete
 - In future will work with NFL, NHL
 
@@ -31,7 +31,7 @@
 - Organized files moving towards industry structure
 - Setup basic flask project and basic routes
 
-### **_1.1.0_**: API setup and Initial Arbitrage Finder
+### :star: **_1.1.0_**: API setup and Initial Arbitrage Finder
 - Arbitrage Finder basic setup complete
 - Checks across 4 US bookies for NFL ML/Spreads
 - Outputs results in console
