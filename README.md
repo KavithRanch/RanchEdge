@@ -8,20 +8,20 @@
 ## <u>Pending Update Progress:</u>
 > [!IMPORTANT]
 > Only checked changes are currently pushed to the repo
-### **_1.2.0_**: Setup Flask Backend
-- [x] Refractor project structure
-- [x] Setup Flask project and basic pages
-- [x] Setup known routes (empty renders)
-- [x] Setup known models
+### **_1.3.0_**: Database querying/populating scripts
+[ ] Create scripts for populating database from api
+[ ] Create scripts for stats retrieval from db
+[ ] Create scripts for updating database from api
+[ ] Build api endpoints for serving data to frontend
 
 <br>
 
 ---
 
 ## <u>Updates:</u>
-### :star: **_1.2.0_**: Flask Backend and NBA Models defined
+### :star: **_1.2.0_**: Flask Backend and NBA Models defined :star:
 - All basic models for NBA are complete
-- In future will work with NFL, NHL
+- Database created
 
 ### **_1.1.2_**: Database design and model creation
 - Two basic models created
@@ -31,7 +31,7 @@
 - Organized files moving towards industry structure
 - Setup basic flask project and basic routes
 
-### :star: **_1.1.0_**: API setup and Initial Arbitrage Finder
+### :star: **_1.1.0_**: API setup and Initial Arbitrage Finder :star:
 - Arbitrage Finder basic setup complete
 - Checks across 4 US bookies for NFL ML/Spreads
 - Outputs results in console
