@@ -6,10 +6,11 @@ class Team(db.Model):
     __tablename__ = "teams"
 
     id = db.Column(db.Integer(), primary_key=True, nullable=False)
+    sport_id = db.Column(db.String(length=3), nullable=False)
     city = db.Column(db.String(length=20), nullable=False)
     name = db.Column(db.String(length=20), nullable=False)
     logo = db.Column(db.String, nullable=False)
-    conference = db.Column(db.String(length=7), nullable=False)
+    conference = db.Column(db.String(length=20), nullable=False)
     division = db.Column(db.String(length=12), nullable=False)
     abbreviation = db.Column(db.String(length=3), nullable=False)
 
@@ -31,6 +32,7 @@ class Game(db.Model):
     __tablename__ = "games"
 
     id = db.Column(db.Integer(), primary_key=True, nullable=False)
+    sport_id = db.Column(db.Integer, nullable=False)
     season_id = db.Column(db.Integer, nullable=False)
     datetime = db.Column(db.DateTime(), nullable=False)
     referees = db.Column(db.ARRAY(db.Integer))
@@ -42,9 +44,8 @@ class Game(db.Model):
 class GameScores(db.Model):
     __tablename__ = "gamescores"
 
-    id = db.Column(db.Integer, primary_key=True, nullable=False)
-    game_id = db.Column(db.Integer, db.ForeignKey('games.id', ondelete="CASCADE"), nullable=False)
-    team_id = db.Column(db.Integer, db.ForeignKey('teams.id', ondelete="CASCADE"), nullable=False)
+    game_id = db.Column(db.Integer, db.ForeignKey('games.id', ondelete="CASCADE"), primary_key=True, nullable=False)
+    team_id = db.Column(db.Integer, db.ForeignKey('teams.id', ondelete="CASCADE"), primary_key=True, nullable=False)
     period = db.Column(db.Integer, nullable=False)  # 1=Q1, 2=Q2, ..., OT1=5, OT2=6, etc.
     points = db.Column(db.Integer, nullable=False)
 

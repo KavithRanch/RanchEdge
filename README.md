@@ -19,6 +19,10 @@
 ---
 
 ## <u>Updates:</u>
+### **_1.2.1_**: Team table populated
+- Refined models to suit a wider range of queries
+- Completed populating team table script
+
 ### :star: **_1.2.0_**: Flask Backend and NBA Models defined :star:
 - All basic models for NBA are complete
 - In future will work with NFL, NHL
