@@ -8,11 +8,11 @@
 ## <u>Pending Update Progress:</u>
 > [!IMPORTANT]
 > Only checked changes are currently pushed to the repo
-### **_1.3.0_**: Database querying/populating scripts
-[ ] Create scripts for populating database from api
-[ ] Create scripts for stats retrieval from db
-[ ] Create scripts for updating database from api
-[ ] Build api endpoints for serving data to frontend
+### **_1.3.0_**: Scripts for retrieving data and populating db
+- [ ] Create scripts for populating database from api
+- [ ] Create scripts for stats retrieval from db
+- [ ] Create scripts for updating database from api
+- [ ] Build api endpoints for serving data to frontend
 
 <br>
 
@@ -21,7 +21,7 @@
 ## <u>Updates:</u>
 ### :star: **_1.2.0_**: Flask Backend and NBA Models defined :star:
 - All basic models for NBA are complete
-- Database created
+- In future will work with NFL, NHL
 
 ### **_1.1.2_**: Database design and model creation
 - Two basic models created
