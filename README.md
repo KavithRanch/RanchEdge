@@ -12,13 +12,21 @@
 - [x] Refractor project structure
 - [x] Setup Flask project and basic pages
 - [x] Setup known routes (empty renders)
-- [ ] Setup known models
+- [x] Setup known models
 
 <br>
 
 ---
 
 ## <u>Updates:</u>
+### **_1.2.0_**: Flask Backend and NBA Models defined
+- All basic models for NBA are complete
+- In future will work with NFL, NHL
+
+### **_1.1.2_**: Database design and model creation
+- Two basic models created
+- Basic db structure outlined (img in static)
+
 ### **_1.1.1_**: Project Restructure
 - Organized files moving towards industry structure
 - Setup basic flask project and basic routes

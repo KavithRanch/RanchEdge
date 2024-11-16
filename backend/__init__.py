@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_ECHO'] = True
 
 db = SQLAlchemy(app)
 
-from backend.models import Team, Player
+from backend.models import Team, Player, Game, GameScores, NBAPlayerGameStats, NBATeamGameStats
 
 from backend import routes
 
