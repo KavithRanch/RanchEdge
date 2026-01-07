@@ -28,7 +28,7 @@ These components help create images and containers in code.
 These define **how images are created**, basically a build script (like a MakeFile). Each dockerfile maps to a subsystem.
 
 
-'''dockerfile
+```dockerfile
 # 1. Choose a base image (base python 3.11)
 FROM python:3.11-slim
 
@@ -49,12 +49,12 @@ EXPOSE 8000
 
 # 7. Command to start the app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-'''
+```
 
 ### docker-compose.yml
 Declares how the different **subsystems should work together**
 
-'''yml
+```yml
 version: "3.9"
 
 services:
@@ -77,7 +77,22 @@ services:
       POSTGRES_DB: ranchdb
     ports:
       - "5432:5432"
-'''
+```
+
+#### Compose commands:
+
+```bash
+# Creates containers and builds anytime a docker image is new/modified
+# Need to run the first time, when Dockerfile or requirements.txt changes
+docker compose --build
+
+# Creates and starts containers
+docker compose up 
+
+# Stops and removes all containers
+docker compose down 
+
+```
 
 ### .dockerignore
 Lists which files should be **avoided from packaging**. Things like *node_modules*, *.env*, *.git* and *local config files*.

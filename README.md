@@ -1,5 +1,5 @@
 # RanchEdge
-_Backend • Data • Systems_
+*Backend • Data • Systems*
 
 RanchEdge is a data-driven decision-support platform that identifies sport market pricing inefficiencies and evaluates the long-term quality of decisions under uncertainty.
 
@@ -7,7 +7,7 @@ RanchEdge is a data-driven decision-support platform that identifies sport marke
 
 ## Motivation
 
-Melting my passions for sports and data analytics, the domain used to explore these ideas is sports betting markets, but the system design and evaluation principles generalize to other decision-making problems under uncertainty.
+Melting my passions for sports and data analytics, the domain used to explore these ideas is the sports betting markets, but the system design and evaluation principles generalize to other decision-making problems under uncertainty.
 
 RanchEdge focuses on:
 - Identifying opportunities where market prices are misaligned
@@ -47,18 +47,23 @@ RanchEdge focuses on:
 ---
 
 ## Versioning
-- [ ] **v1.0.0: Complete MVP**
-- [ ] v0.10.0: Performance Dashboard
-- [ ] v0.9.0: Bet logging (selection/outcome)
-- [ ] v0.8.0: Basic UI dev (opportunities dashboard)
-- [ ] v0.7.0: Basic API endpoints for EV access
-- [ ] v0.6.0: EV Opportunities Generation
-- [ ] v0.5.0: True probability calculation
-- [ ] v0.4.0: Odds Ingestion
-- [ ] v0.3.0: Math Engine (book edge removal + EV)
-- [ ] v0.2.0: Database Schema
-- [ ] v0.1.0: Project Skeleton 
-
+- [ ] <span style="color:goldenrod">**v1.0.0: Complete MVP**</span>
+- [ ] **v0.10.0**: Performance Dashboard
+- [ ] **v0.9.0**: Bet logging (selection/outcome)
+- [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
+- [ ] **v0.7.0**: Basic API endpoints for EV access
+- [ ] **v0.6.0**: EV Opportunities Generation
+- [ ] **v0.5.0**: True probability calculation
+- [ ] **v0.4.0**: Odds Ingestion
+- [ ] **v0.3.0**: Math Engine (book edge removal + EV)
+- [ ] **v0.2.0**: Database Schema
+- [x] **v0.1.0**: Project Skeleton
+    * Skeleton project structure created 
+    * Basic FastAPI `/health` endpoint created for testing responsiveness
+    * **backend** Dockerfile & requirements.txt setup for containerization
+    * **docker-compose.yml** file setup for detailing how subsystems should be connected
+    * Up-to-date documentation for my personal understanding of 📄[**docker**](docs/docker_info.md) and 📄[**fastapi**](docs/fastapi_info.md) based on usage of each tool so far
+    * Documentation of 📄[**MVP**](docs/mvp.md) outlining **v1.0.0 scope**  
 ---
 
 ## Tech Stack
@@ -77,10 +82,6 @@ RanchEdge focuses on:
 ### Dev / Ops
 - **Docker & docker-compose**
 - **Pytest**
-
-
-A detailed MVP specification can be found here:  
-📄 **[docs/mvp.md](docs/mvp.md)**
 
 
 

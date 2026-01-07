@@ -11,11 +11,11 @@ FastApi is a python framework which helps serve REST Apis quicky and effectively
 - [x] Request bodies are validated before hitting logic so that less runtime bugs occur
 
 ## Basic Usage
-'''
+```python
 from fastapi import FastAPI
 app = FastAPI()
 
 @app.get("/route")
 def return_status():
     return { "status" : "good" }
-'''
+```
