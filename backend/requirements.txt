@@ -1,2 +1,7 @@
-fastapi==0.128.0
-uvicorn[standard]==0.40.0
+fastapi~=0.128.0
+uvicorn[standard]~=0.40.0
+
+# DB-related dependencies
+SQLAlchemy~=2.0.0
+psycopg[binary]~=3.1.0
+alembic~=1.13.0
