@@ -56,9 +56,10 @@ RanchEdge focuses on:
 - [ ] **v0.5.0**: True probability calculation
 - [ ] **v0.4.0**: Odds Ingestion
 - [ ] **v0.3.0**: Math Engine (book edge removal + EV)
-- [ ] **v0.2.0**: Database Schema
+- [ ] **v0.2.0**: Database + Alembic Migration Setup
     * engine.py and session.py setup for establishing connections and sessions with database
-    * Up-to-date documentation for my personal understanding of how the different 📄[**database-related files**](backend/backend_docs/db_folder_structure.md) required work together
+    * simple model for sportsbook created to test functionality of Alembic migration generation and application
+    * Up-to-date documentation for my personal understanding of how the different 📄[**database-related files**](backend/backend_docs/db_folder_structure.md) required work together and 📄[**general database info**](docs/database_info.md)
 - [x] **v0.1.0**: Project Skeleton
     * Skeleton project structure created 
     * Basic FastAPI `/health` endpoint created for testing responsiveness

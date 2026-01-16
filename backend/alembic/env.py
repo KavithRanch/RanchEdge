@@ -7,6 +7,7 @@ from alembic import context
 
 import os
 from app.db.base import Base
+from app.models import sportsbooks  # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

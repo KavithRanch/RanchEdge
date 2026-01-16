@@ -25,3 +25,9 @@ Steps:
 2. Alembic creates a migration file
 3. Devs review the migration file
 4. if all is well we continue and devs run the migration.
+
+```bash
+docker compose exec backend alembic revision --autogenerate -m "message" # creates the migration file
+
+docker compose exec backend alembic upgrade head # Apply migration
+```
