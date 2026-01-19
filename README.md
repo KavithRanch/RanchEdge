@@ -55,8 +55,11 @@ RanchEdge focuses on:
 - [ ] **v0.6.0**: EV Opportunities Generation
 - [ ] **v0.5.0**: True probability calculation
 - [ ] **v0.4.0**: Odds Ingestion
-- [ ] **v0.3.0**: Math Engine (book edge removal + EV)
+- [x] **v0.3.0**: Math Engine (book edge removal + EV)
     * Implemented rudimentary odds converter and vig removal for two-way markets (Over/Under)
+    * Implemented required EV calculations assuming fair probability is true prob for MVP
+    * Created testing files passing 100%
+    * Created documentation on the process of finding 📄[**EV**](backend/backend_docs/ev_info.md) opportunities and testing in python using 📄[**pytest**](docs/pytest_info.md)
 - [x] **v0.2.0**: Database + Alembic Migration Setup
     * engine.py and session.py setup for establishing connections and sessions with database
     * simple model for sportsbook created to test functionality of Alembic migration generation and application
