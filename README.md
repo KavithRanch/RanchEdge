@@ -74,7 +74,7 @@ RanchEdge focuses on:
 ### Backend
 - **Python**
 - **FastAPI**
-- **PostgreSQL**
+- **PostgreSQL (Alembis for migrations)**
 - **Celery**
 - **Redis**
 - **SQLAlchemy**
