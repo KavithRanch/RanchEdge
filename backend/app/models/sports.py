@@ -3,11 +3,9 @@ from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
 
 
-class OddsSnapshot(Base):
-    __tablename__ = "odds_snapshots"
+class Sports(Base):
+    __tablename__ = "sports"
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
-    pulled_at: Mapped[str] = mapped_column(not_null=True)
-
-    source: Mapped[str] = mapped_column(not_null=True)
+    name: Mapped[str] = mapped_column(not_null=True)
     created_at: Mapped[datetime] = mapped_column(not_null=True)

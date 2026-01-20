@@ -7,7 +7,7 @@ class Sportsbook(Base):
     __tablename__ = "sportsbooks"
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
-    name: Mapped[str]
+    name: Mapped[str] = mapped_column(nullable=False, unique=True)
     created_at: Mapped[datetime] = mapped_column(
         nullable=False, default=datetime.utcnow
     )
