@@ -92,6 +92,15 @@ docker compose up
 # Stops and removes all containers
 docker compose down 
 
+# Allows us to run commands from within a container
+docker compose exec <service_name> <command>
+# Examples:
+docker compose exec db psql -U postgres -d ranchedge # Hop into psql and run db commands
+docker compose exec backend alembic revision --autogenerate -m "message" # Create Alembic Migration File
+docker compose exec backend alembic upgrade head # Apply the migration file to the head
+
+
+
 ```
 
 ### .dockerignore
