@@ -1,0 +1,973 @@
+[
+    {
+        "id": "4030222f70e9378b52f52597c7cc89a1",
+        "sport_key": "basketball_nba",
+        "sport_title": "NBA",
+        "commence_time": "2026-01-26T18:42:00Z",
+        "home_team": "Atlanta Hawks",
+        "away_team": "Indiana Pacers",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2026-01-26T19:36:12Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -106},
+                            {"name": "Indiana Pacers", "price": -120},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -108, "point": 0.5},
+                            {"name": "Indiana Pacers", "price": -122, "point": -0.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2026-01-26T19:35:15Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -130},
+                            {"name": "Indiana Pacers", "price": 100},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -115, "point": -1.5},
+                            {"name": "Indiana Pacers", "price": -115, "point": 1.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-26T19:35:37Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -109},
+                            {"name": "Indiana Pacers", "price": -120},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -121, "point": 1.0},
+                            {"name": "Indiana Pacers", "price": -113, "point": -1.0},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betmgm",
+                "title": "BetMGM",
+                "last_update": "2026-01-26T19:36:11Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -120},
+                            {"name": "Indiana Pacers", "price": -105},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -105, "point": -1.5},
+                            {"name": "Indiana Pacers", "price": -125, "point": 1.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "espnbet",
+                "title": "theScore Bet",
+                "last_update": "2026-01-26T19:35:54Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -125},
+                            {"name": "Indiana Pacers", "price": -105},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Atlanta Hawks", "price": -105, "point": -1.5},
+                            {"name": "Indiana Pacers", "price": -125, "point": 1.5},
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "d2ffa3af3a62c27846ed67b92ba4cd68",
+        "sport_key": "basketball_nba",
+        "sport_title": "NBA",
+        "commence_time": "2026-01-26T20:10:00Z",
+        "home_team": "Charlotte Hornets",
+        "away_team": "Philadelphia 76ers",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2026-01-26T19:36:12Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -124},
+                            {"name": "Philadelphia 76ers", "price": 106},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -108, "point": -2.0},
+                            {"name": "Philadelphia 76ers", "price": -112, "point": 2.0},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2026-01-26T19:35:15Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -122},
+                            {"name": "Philadelphia 76ers", "price": 102},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -112, "point": -1.5},
+                            {"name": "Philadelphia 76ers", "price": -108, "point": 1.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-26T19:35:37Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -129},
+                            {"name": "Philadelphia 76ers", "price": 104},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -112, "point": -2.0},
+                            {"name": "Philadelphia 76ers", "price": -114, "point": 2.0},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betmgm",
+                "title": "BetMGM",
+                "last_update": "2026-01-26T19:36:11Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -130},
+                            {"name": "Philadelphia 76ers", "price": 105},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -105, "point": -2.5},
+                            {"name": "Philadelphia 76ers", "price": -115, "point": 2.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "espnbet",
+                "title": "theScore Bet",
+                "last_update": "2026-01-26T19:35:54Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -125},
+                            {"name": "Philadelphia 76ers", "price": 105},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Charlotte Hornets", "price": -115, "point": -1.5},
+                            {"name": "Philadelphia 76ers", "price": -105, "point": 1.5},
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "a5157a5c583a77ad6607b6e67bfcb8b2",
+        "sport_key": "basketball_nba",
+        "sport_title": "NBA",
+        "commence_time": "2026-01-27T00:10:00Z",
+        "home_team": "Cleveland Cavaliers",
+        "away_team": "Orlando Magic",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2026-01-26T19:36:12Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Cleveland Cavaliers", "price": -230},
+                            {"name": "Orlando Magic", "price": 190},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -106,
+                                "point": -6.0,
+                            },
+                            {"name": "Orlando Magic", "price": -114, "point": 6.0},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2026-01-26T19:35:15Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Cleveland Cavaliers", "price": -238},
+                            {"name": "Orlando Magic", "price": 195},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -118,
+                                "point": -5.5,
+                            },
+                            {"name": "Orlando Magic", "price": -102, "point": 5.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-26T19:35:37Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Cleveland Cavaliers", "price": -250},
+                            {"name": "Orlando Magic", "price": 195},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -114,
+                                "point": -6.0,
+                            },
+                            {"name": "Orlando Magic", "price": -112, "point": 6.0},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betmgm",
+                "title": "BetMGM",
+                "last_update": "2026-01-26T19:36:11Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Cleveland Cavaliers", "price": -235},
+                            {"name": "Orlando Magic", "price": 195},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -118,
+                                "point": -5.5,
+                            },
+                            {"name": "Orlando Magic", "price": -102, "point": 5.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "espnbet",
+                "title": "theScore Bet",
+                "last_update": "2026-01-26T19:35:54Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Cleveland Cavaliers", "price": -215},
+                            {"name": "Orlando Magic", "price": 180},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {
+                                "name": "Cleveland Cavaliers",
+                                "price": -110,
+                                "point": -5.5,
+                            },
+                            {"name": "Orlando Magic", "price": -110, "point": 5.5},
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "00747f8760cdab8e1f83fde19f362d2b",
+        "sport_key": "basketball_nba",
+        "sport_title": "NBA",
+        "commence_time": "2026-01-27T01:10:00Z",
+        "home_team": "Boston Celtics",
+        "away_team": "Portland Trail Blazers",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2026-01-26T19:36:12Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -290},
+                            {"name": "Portland Trail Blazers", "price": 235},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -108, "point": -7.5},
+                            {
+                                "name": "Portland Trail Blazers",
+                                "price": -112,
+                                "point": 7.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2026-01-26T19:35:15Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -278},
+                            {"name": "Portland Trail Blazers", "price": 225},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -105, "point": -7.5},
+                            {
+                                "name": "Portland Trail Blazers",
+                                "price": -115,
+                                "point": 7.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-26T19:35:37Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -315},
+                            {"name": "Portland Trail Blazers", "price": 235},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -115, "point": -7.5},
+                            {
+                                "name": "Portland Trail Blazers",
+                                "price": -110,
+                                "point": 7.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betmgm",
+                "title": "BetMGM",
+                "last_update": "2026-01-26T19:36:11Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -300},
+                            {"name": "Portland Trail Blazers", "price": 240},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -105, "point": -7.5},
+                            {
+                                "name": "Portland Trail Blazers",
+                                "price": -115,
+                                "point": 7.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "espnbet",
+                "title": "theScore Bet",
+                "last_update": "2026-01-26T19:35:54Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -280},
+                            {"name": "Portland Trail Blazers", "price": 230},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Boston Celtics", "price": -110, "point": -7.5},
+                            {
+                                "name": "Portland Trail Blazers",
+                                "price": -110,
+                                "point": 7.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "508b6db74fa61e80b1219357e6b7de76",
+        "sport_key": "basketball_nba",
+        "sport_title": "NBA",
+        "commence_time": "2026-01-27T01:10:00Z",
+        "home_team": "Chicago Bulls",
+        "away_team": "Los Angeles Lakers",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2026-01-26T19:36:12Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": 100},
+                            {"name": "Los Angeles Lakers", "price": -118},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -112, "point": 1.5},
+                            {
+                                "name": "Los Angeles Lakers",
+                                "price": -108,
+                                "point": -1.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2026-01-26T19:35:15Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -102},
+                            {"name": "Los Angeles Lakers", "price": -118},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -115, "point": 1.5},
+                            {
+                                "name": "Los Angeles Lakers",
+                                "price": -105,
+                                "point": -1.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-26T19:35:37Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -103},
+                            {"name": "Los Angeles Lakers", "price": -121},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -114, "point": 1.5},
+                            {
+                                "name": "Los Angeles Lakers",
+                                "price": -112,
+                                "point": -1.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betmgm",
+                "title": "BetMGM",
+                "last_update": "2026-01-26T19:36:11Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -105},
+                            {"name": "Los Angeles Lakers", "price": -115},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -120, "point": 1.5},
+                            {"name": "Los Angeles Lakers", "price": 100, "point": -1.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "espnbet",
+                "title": "theScore Bet",
+                "last_update": "2026-01-26T19:35:54Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": 100},
+                            {"name": "Los Angeles Lakers", "price": -120},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Chicago Bulls", "price": -110, "point": 1.5},
+                            {
+                                "name": "Los Angeles Lakers",
+                                "price": -110,
+                                "point": -1.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "a1550da07312880e9d991e0cc16bb7ed",
+        "sport_key": "basketball_nba",
+        "sport_title": "NBA",
+        "commence_time": "2026-01-27T01:10:00Z",
+        "home_team": "Houston Rockets",
+        "away_team": "Memphis Grizzlies",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2026-01-26T19:36:12Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -450},
+                            {"name": "Memphis Grizzlies", "price": 350},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -106, "point": -10.5},
+                            {"name": "Memphis Grizzlies", "price": -114, "point": 10.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2026-01-26T19:35:15Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -425},
+                            {"name": "Memphis Grizzlies", "price": 330},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -102, "point": -10.5},
+                            {"name": "Memphis Grizzlies", "price": -118, "point": 10.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-26T19:35:37Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -480},
+                            {"name": "Memphis Grizzlies", "price": 340},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -113, "point": -10.5},
+                            {"name": "Memphis Grizzlies", "price": -113, "point": 10.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betmgm",
+                "title": "BetMGM",
+                "last_update": "2026-01-26T19:36:11Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -450},
+                            {"name": "Memphis Grizzlies", "price": 340},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -115, "point": -9.5},
+                            {"name": "Memphis Grizzlies", "price": -105, "point": 9.5},
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "espnbet",
+                "title": "theScore Bet",
+                "last_update": "2026-01-26T19:35:54Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": -450},
+                            {"name": "Memphis Grizzlies", "price": 340},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Houston Rockets", "price": 100, "point": -10.5},
+                            {"name": "Memphis Grizzlies", "price": -120, "point": 10.5},
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    {
+        "id": "2468f90b17177369a0fba57780016f93",
+        "sport_key": "basketball_nba",
+        "sport_title": "NBA",
+        "commence_time": "2026-01-27T02:40:00Z",
+        "home_team": "Minnesota Timberwolves",
+        "away_team": "Golden State Warriors",
+        "bookmakers": [
+            {
+                "key": "fanduel",
+                "title": "FanDuel",
+                "last_update": "2026-01-26T19:36:12Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Golden State Warriors", "price": 265},
+                            {"name": "Minnesota Timberwolves", "price": -330},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": -110,
+                                "point": 8.5,
+                            },
+                            {
+                                "name": "Minnesota Timberwolves",
+                                "price": -110,
+                                "point": -8.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "draftkings",
+                "title": "DraftKings",
+                "last_update": "2026-01-26T19:35:15Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {"name": "Golden State Warriors", "price": 245},
+                            {"name": "Minnesota Timberwolves", "price": -305},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:15Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": -110,
+                                "point": 8.5,
+                            },
+                            {
+                                "name": "Minnesota Timberwolves",
+                                "price": -110,
+                                "point": -8.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betmgm",
+                "title": "BetMGM",
+                "last_update": "2026-01-26T19:36:11Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {"name": "Golden State Warriors", "price": 240},
+                            {"name": "Minnesota Timberwolves", "price": -300},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:36:11Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": -110,
+                                "point": 8.5,
+                            },
+                            {
+                                "name": "Minnesota Timberwolves",
+                                "price": -110,
+                                "point": -8.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "betrivers",
+                "title": "BetRivers",
+                "last_update": "2026-01-26T19:35:37Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {"name": "Golden State Warriors", "price": 245},
+                            {"name": "Minnesota Timberwolves", "price": -315},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:37Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": -110,
+                                "point": 8.0,
+                            },
+                            {
+                                "name": "Minnesota Timberwolves",
+                                "price": -114,
+                                "point": -8.0,
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                "key": "espnbet",
+                "title": "theScore Bet",
+                "last_update": "2026-01-26T19:35:54Z",
+                "markets": [
+                    {
+                        "key": "h2h",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {"name": "Golden State Warriors", "price": 250},
+                            {"name": "Minnesota Timberwolves", "price": -300},
+                        ],
+                    },
+                    {
+                        "key": "spreads",
+                        "last_update": "2026-01-26T19:35:54Z",
+                        "outcomes": [
+                            {
+                                "name": "Golden State Warriors",
+                                "price": -115,
+                                "point": 8.5,
+                            },
+                            {
+                                "name": "Minnesota Timberwolves",
+                                "price": -105,
+                                "point": -8.5,
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+]

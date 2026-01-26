@@ -4,7 +4,7 @@ from app.models.leagues import League
 from app.models.teams import Team
 
 SEED_TEAMS: dict[str, list[tuple[str, str]]] = {
-    "NBA": [
+    "nba": [
         ("Atlanta Hawks", "ATL"),
         ("Boston Celtics", "BOS"),
         ("Brooklyn Nets", "BKN"),
@@ -36,7 +36,7 @@ SEED_TEAMS: dict[str, list[tuple[str, str]]] = {
         ("Utah Jazz", "UTA"),
         ("Washington Wizards", "WAS"),
     ],
-    "NFL": [
+    "nfl": [
         ("Arizona Cardinals", "ARI"),
         ("Atlanta Falcons", "ATL"),
         ("Baltimore Ravens", "BAL"),

@@ -8,7 +8,7 @@ class League(Base):
     __tablename__ = "leagues"
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
-    name: Mapped[str] = mapped_column(nullable=False)
+    league_name: Mapped[str] = mapped_column(nullable=False)
     league_abv: Mapped[str] = mapped_column(nullable=False)
 
     sport_id: Mapped[int] = mapped_column(ForeignKey("sports.id"), nullable=False)
@@ -27,6 +27,6 @@ class League(Base):
     )
 
     __table_args__ = (
-        UniqueConstraint("name", "sport_id", name="uq_name_sport"),
+        UniqueConstraint("league_name", "sport_id", name="uq_league_name_sport"),
         UniqueConstraint("league_abv", "sport_id", name="uq_leagueabv_sport"),
     )

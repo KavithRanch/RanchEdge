@@ -3,6 +3,7 @@ from app.db.session import SessionLocal
 from app.data_ingest.seed.seed_sports import seed_sports
 from app.data_ingest.seed.seed_leagues import seed_leagues
 from app.data_ingest.seed.seed_teams import seed_teams
+from app.data_ingest.seed.seed_sportsbooks import seed_sportsbooks
 
 
 def main() -> None:
@@ -14,6 +15,7 @@ def main() -> None:
         seed_sports(session)
         seed_leagues(session)
         seed_teams(session)
+        seed_sportsbooks(session)
         print("Database seeding completed successfully.")
     finally:
         session.close()
