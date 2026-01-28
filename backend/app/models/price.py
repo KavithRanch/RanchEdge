@@ -22,7 +22,7 @@ class Price(Base):
     # outcome_name: Team / Over / Under
     # outcome_point: Null / Point spread / Total points for O/U
     outcome_name: Mapped[str] = mapped_column(nullable=False)
-    outcome_point: Mapped[float] = mapped_column(Numeric(8, 3), nullable=False)
+    outcome_point: Mapped[float] = mapped_column(Numeric(8, 3), nullable=True)
 
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),

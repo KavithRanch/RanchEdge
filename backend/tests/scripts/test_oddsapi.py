@@ -1,11 +1,11 @@
 from app.data_ingest.odds.oddsapi_client import fetch_odds
 
 
-def test_fetch_odds_success() -> None:
+def test_fetch_odds_success() -> list[dict]:
     # Mock parameters
     sport = "basketball_nba"
-    markets = ["h2h", "spreads"]
-    bookmakers = ["draftkings", "fanduel", "betmgm", "betrivers", "espnbet"]
+    markets = ["h2h", "spreads", "totals"]
+    bookmakers = ["draftkings", "fanduel"]
 
     # Call the function (this will actually make a request if not mocked)
     try:
@@ -14,7 +14,7 @@ def test_fetch_odds_success() -> None:
     except RuntimeError as e:
         print(f"RuntimeError occurred: {e}")
 
-    print(odds_data)
+    return odds_data
 
 
 if __name__ == "__main__":
