@@ -1,14 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.models.sportsbooks import Sportsbook
-
-SEED_SPORTSBOOKS: list[tuple[str, str]] = [
-    ("draftkings", "DraftKings"),
-    ("fanduel", "FanDuel"),
-    ("betmgm", "BetMGM"),
-    ("betrivers", "BetRivers"),
-    ("espnbet", "ESPN Bet"),
-]
+from app.constants.seed_constants import SEED_SPORTSBOOKS
 
 
 def seed_sportsbooks(session: Session) -> None:

@@ -1,11 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.models.sports import Sport
-
-SEED_SPORTS: list[str] = [
-    "basketball",
-    "football",
-]
+from app.constants.seed_constants import SEED_SPORTS
 
 
 def seed_sports(session: Session) -> None:
