@@ -7,7 +7,7 @@ def iso_to_datetime(iso_str: str) -> datetime:
     return datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
 
 
-def format_datetime(dt: datetime, tz: str = "America/New_York") -> dict:
+def format_datetime(dt: datetime, tz: str = "America/New_York") -> dict[str, int | str]:
     local_dt = dt.astimezone(ZoneInfo(tz))
     return {
         "day": local_dt.day,

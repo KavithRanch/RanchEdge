@@ -4,15 +4,17 @@ from app.models.sports import Sport
 from app.constants.seed_constants import SEED_SPORTS
 
 
-def seed_sports(session: Session) -> None:
-    with session.begin():
-        for sport in SEED_SPORTS:
-            # Check if the sport already exists
-            select_sport = select(Sport).where(Sport.name == sport)
-            # scalar_one_or_none() returns either None if no result is found or the single result
-            sport_exists = session.execute(select_sport).scalar_one_or_none()
+def seed_sports(session: Session) -> int:
+    new_sport_count = 0
+    for sport in SEED_SPORTS:
+        # Check if the sport already exists
+        select_sport = select(Sport).where(Sport.name == sport)
+        # scalar_one_or_none() returns either None if no result is found or the single result
+        sport_exists = session.execute(select_sport).scalar_one_or_none()
 
-            if sport_exists is None:
-                # Create and add the new sport
-                new_sport = Sport(name=sport)
-                session.add(new_sport)
+        if sport_exists is None:
+            # Create and add the new sport
+            new_sport = Sport(name=sport)
+            session.add(new_sport)
+            new_sport_count += 1
+    return new_sport_count

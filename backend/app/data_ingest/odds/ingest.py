@@ -15,11 +15,19 @@ from util.datetime import iso_to_datetime, format_datetime
 SOURCE = "OddsAPI"
 
 
-def get_id(session, stmt):
-    return session.execute(stmt).scalar_one()
+def get_id(session, stmt, *, entity: str, value: str):
+    obj_id = session.execute(stmt).scalar_one_or_none()
+    if obj_id is None:
+        raise ValueError(
+            f"Missing {entity} for '{value}'. Did you run seed? / is the key correct?"
+        )
+    return obj_id
 
 
-def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) -> None:
+def ingest_odds(
+    session, sport: str, markets: list[str], bookmakers: list[str]
+) -> tuple[int, dict]:
+
     pulled_at = datetime.now(timezone.utc)
     odds_json_response = fetch_odds(sport, markets, bookmakers)
 
@@ -30,6 +38,8 @@ def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) 
     session.add(new_snapshot)
     session.flush()
 
+    event_count, market_count, price_count = 0, 0, 0
+
     # Process and store odds_json_response into the database using the session
     for event in odds_json_response:
         event_id = event["id"]
@@ -38,19 +48,30 @@ def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) 
         away_team = event["away_team"]
 
         league_id = get_id(
-            session, select(League.id).where(League.league_name == league)
+            session,
+            select(League.id).where(League.league_name == league),
+            entity="League",
+            value=league,
         )
         home_team_id = get_id(
-            session, select(Team.id).where(Team.team_name == home_team)
+            session,
+            select(Team.id).where(Team.team_name == home_team),
+            entity="Home Team",
+            value=home_team,
         )
         away_team_id = get_id(
-            session, select(Team.id).where(Team.team_name == away_team)
+            session,
+            select(Team.id).where(Team.team_name == away_team),
+            entity="Away Team",
+            value=away_team,
         )
 
         commence_time = iso_to_datetime(event["commence_time"])
 
+        printable_time = format_datetime(commence_time)
+
         print(
-            f"Processing event ({event_id}): {home_team} vs {away_team} at {format_datetime(commence_time)} with odds data."
+            f"Processing event {event_id}: ({printable_time['time']} UTC {printable_time['day']}/{printable_time['month']}/{printable_time['year']}) {away_team} @ {home_team}."
         )
 
         event_db = session.execute(
@@ -68,8 +89,8 @@ def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) 
                 source_event_id=event_id,
                 start_time=commence_time,
             )
-
             session.add(event_db)
+            event_count += 1
             session.flush()
         else:
             event_db.start_time = commence_time
@@ -81,10 +102,11 @@ def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) 
                 select(Sportsbook.id).where(
                     Sportsbook.sportsbook_name == bookmaker["key"]
                 ),
+                entity="Sportsbook",
+                value=bookmaker["key"],
             )
 
             for market in bookmaker["markets"]:
-
                 market_type = market["key"]
                 period = "full_game"
                 if market_type == "spreads":
@@ -115,6 +137,7 @@ def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) 
                         period=period,
                     )
                     session.add(market_db)
+                    market_count += 1
                     session.flush()
 
                 for outcome in market["outcomes"]:
@@ -146,3 +169,10 @@ def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) 
                             outcome_point=outcome_point,
                         )
                         session.add(price_db)
+                        price_count += 1
+
+    return new_snapshot.id, {
+        "events": event_count,
+        "markets": market_count,
+        "prices": price_count,
+    }
