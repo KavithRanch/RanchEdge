@@ -1,4 +1,4 @@
-def american_to_decimal(american_odds: int) -> float:
+def american_to_decimal(american_odds: float) -> float:
     """Convert American odds (e.g. +150, -110) to Decimal odds."""
     # Handle edge case where American odds is zero
     if american_odds == 0:

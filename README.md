@@ -54,6 +54,7 @@ RanchEdge focuses on:
 - [ ] **v0.7.0**: Basic API endpoints for EV access
 - [ ] **v0.6.0**: EV Opportunities Generation
 - [ ] **v0.5.0**: True probability calculation
+    * New Model implemented to store calculated true probabilities (one row per market per outcome)
 - [x] **v0.4.0**: Odds Ingestion
     * End-to-end Odds Ingestion Pipeline implemented
         1. Pull from API
@@ -62,6 +63,7 @@ RanchEdge focuses on:
     * Created models for all odds ingestion related tables and seed tables
     * Created alembic migration files and applied them to the db
     * Created scripts for filling seed tables and for pulling odds from OddsApi
+    * Implemented CLI scripts to setup seeding and data persistence 
     * Designed data ingestion/persistance script
     * Documented 📄[**Odds Data Pipeline File Structure**](backend/backend_docs/db_folder_structure.md) and 📄[**DB Schema**](backend/backend_docs/db_schema.md)
 - [x] **v0.3.0**: Math Engine (book edge removal + EV)

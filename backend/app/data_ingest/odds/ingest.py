@@ -12,6 +12,8 @@ from app.models.teams import Team
 from app.data_ingest.odds.oddsapi_client import fetch_odds
 from util.datetime import iso_to_datetime, format_datetime
 
+from app.constants.enums import MarketPeriod
+
 SOURCE = "OddsAPI"
 
 
@@ -108,7 +110,7 @@ def ingest_odds(
 
             for market in bookmaker["markets"]:
                 market_type = market["key"]
-                period = "full_game"
+                period = MarketPeriod.FULL_GAME.value
                 if market_type == "spreads":
                     line = abs(market["outcomes"][0]["point"])
                 elif market_type == "totals":
