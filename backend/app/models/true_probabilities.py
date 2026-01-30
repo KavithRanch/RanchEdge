@@ -1,4 +1,4 @@
-from backend.app.db.base import Base
+from app.db.base import Base
 from datetime import datetime
 from sqlalchemy import DateTime, ForeignKey, Index, Numeric, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column
@@ -11,9 +11,6 @@ class TrueProbability(Base):
 
     odds_snapshot_id: Mapped[int] = mapped_column(
         ForeignKey("odds_snapshots.id", ondelete="CASCADE"), nullable=False, index=True
-    )
-    event_id: Mapped[int] = mapped_column(
-        ForeignKey("events.id", ondelete="CASCADE"), nullable=False, index=True
     )
     market_id: Mapped[int] = mapped_column(
         ForeignKey("markets.id", ondelete="CASCADE"), nullable=False, index=True
@@ -40,5 +37,4 @@ class TrueProbability(Base):
             name="uq_snapshot_market_outcome_point",
         ),
         Index("ix_market_snapshot", "market_id", "odds_snapshot_id"),
-        Index("ix_event_snapshot", "event_id", "odds_snapshot_id"),
     )

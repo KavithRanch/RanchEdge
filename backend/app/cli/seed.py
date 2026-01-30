@@ -14,6 +14,11 @@ def main():
 
     target = sys.argv[1]
 
+    new_sports_count = 0
+    new_leagues_count = 0
+    new_teams_count = 0
+    new_sportsbooks_count = 0
+
     logging.info(f"Beginning seeding for {target}...")
     with SessionLocal.begin() as session:
         if target in ["all", "sports"]:

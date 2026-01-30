@@ -6,6 +6,7 @@ from .sportsbooks import Sportsbook
 from .odds_snapshot import OddsSnapshot
 from .markets import Market
 from .price import Price
+from .true_probabilities import TrueProbability
 
 __all__ = [
     "Team",
@@ -16,4 +17,5 @@ __all__ = [
     "OddsSnapshot",
     "Market",
     "Price",
+    "TrueProbability",
 ]
