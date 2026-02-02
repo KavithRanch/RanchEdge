@@ -1,8 +1,10 @@
-from sqlalchemy import select
+from sqlalchemy import delete, select
 from app.db.session import SessionLocal
 from app.models.price import Price
+from app.models.true_probabilities import TrueProbability
 from app.math.vig import remove_vig_two_way
-from app.math.odds import american_to_decimal, decimal_to_implied_probability
+
+from app.constants.enums import TrueProbabilityMethod
 
 
 def compute_true_probability_per_snapshot(odds_snapshot_id: int):
@@ -20,34 +22,45 @@ def compute_true_probability_per_snapshot(odds_snapshot_id: int):
             groups[key].append(p)
 
         fair_prob_by_market = {}
-        for (m_id, _), price_group in groups.items():
+        for (market_id, _), price_group in groups.items():
             print(f"{price_group[0].american_odds}, {price_group[1].american_odds}")
             f_prob1, f_prob2 = remove_vig_two_way(
                 price_group[0].american_odds, price_group[1].american_odds
             )
 
-            print(f"{f_prob1}, {f_prob2}, {f_prob1 + f_prob2}")
+            key = (market_id, price_group[0].outcome_name, price_group[0].outcome_point)
+            if key not in fair_prob_by_market:
+                fair_prob_by_market[key] = []
+            fair_prob_by_market[key].append(f_prob1)
 
-        #     key1, key2 = (m_id, price_group[0].outcome_name), (
-        #         m_id,
-        #         price_group[1].outcome_name,
-        #     )
-        #     if key1 not in fair_prob_by_market:
-        #         fair_prob_by_market[key1]
-        #     if key2 not in fair_prob_by_market:
-        #         fair_prob_by_market[key2]
+            key = (market_id, price_group[1].outcome_name, price_group[1].outcome_point)
+            if key not in fair_prob_by_market:
+                fair_prob_by_market[key] = []
+            fair_prob_by_market[key].append(f_prob2)
 
-        #     fair_prob_by_market[key1].append(f_prob1)
-        #     fair_prob_by_market[key2].append(f_prob1)
+        for (
+            market_id,
+            outcome_name,
+            outcome_point,
+        ), f_probs in fair_prob_by_market.items():
+            true_prob = sum(f_probs) / len(f_probs)
 
-        # for (m_id, outcome_name), f_prob in fair_prob_by_market.items():
-        #     print(
-        #         f"Market #: {m_id} | Team: {outcome_name} | # Fair Prob: {len(f_prob)}"
-        #     )
+            new_true_prob = TrueProbability(
+                odds_snapshot_id=odds_snapshot_id,
+                market_id=market_id,
+                outcome_name=outcome_name,
+                outcome_point=outcome_point,
+                true_prob=true_prob,
+                method=TrueProbabilityMethod.VIG_FREE_MEAN,
+            )
 
-    # Go by market and sportsbook to remove the vig from both outcomes
-    # Go by market and outcome
-    # That is the true probability that we can store in a True Probability object
+            session.execute(
+                delete(TrueProbability).where(
+                    TrueProbability.odds_snapshot_id == odds_snapshot_id
+                )
+            )
+            session.add(new_true_prob)
+            session.flush()
 
 
 compute_true_probability_per_snapshot(1)
