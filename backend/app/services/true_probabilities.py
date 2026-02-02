@@ -1,5 +1,4 @@
 from sqlalchemy import delete, select
-from app.db.session import SessionLocal
 from app.models.price import Price
 from app.models.true_probabilities import TrueProbability
 from app.math.vig import remove_vig_two_way
@@ -7,60 +6,62 @@ from app.math.vig import remove_vig_two_way
 from app.constants.enums import TrueProbabilityMethod
 
 
-def compute_true_probability_per_snapshot(odds_snapshot_id: int):
+def compute_true_probability_per_snapshot(session, odds_snapshot_id: int) -> int:
+    tprob_count = 0
 
-    with SessionLocal.begin() as session:
-        # Pull all records allocated to one snapshot
-        stmt = select(Price).where(Price.snapshot_id == odds_snapshot_id)
-        prices = session.execute(stmt).scalars().all()
+    session.execute(
+        delete(TrueProbability).where(
+            TrueProbability.odds_snapshot_id == odds_snapshot_id
+        )
+    )
 
-        groups = {}
-        for p in prices:
-            key = (p.market_id, p.sportsbook_id)
-            if key not in groups:
-                groups[key] = []
-            groups[key].append(p)
+    # Pull all records allocated to one snapshot
+    stmt = select(Price).where(Price.snapshot_id == odds_snapshot_id)
+    prices = session.execute(stmt).scalars().all()
 
-        fair_prob_by_market = {}
-        for (market_id, _), price_group in groups.items():
-            print(f"{price_group[0].american_odds}, {price_group[1].american_odds}")
-            f_prob1, f_prob2 = remove_vig_two_way(
-                price_group[0].american_odds, price_group[1].american_odds
-            )
+    groups = {}
+    for p in prices:
+        key = (p.market_id, p.sportsbook_id)
+        if key not in groups:
+            groups[key] = []
+        groups[key].append(p)
 
-            key = (market_id, price_group[0].outcome_name, price_group[0].outcome_point)
-            if key not in fair_prob_by_market:
-                fair_prob_by_market[key] = []
-            fair_prob_by_market[key].append(f_prob1)
+    fair_prob_by_market = {}
+    for (market_id, _), price_group in groups.items():
+        f_prob1, f_prob2 = remove_vig_two_way(
+            price_group[0].american_odds, price_group[1].american_odds
+        )
 
-            key = (market_id, price_group[1].outcome_name, price_group[1].outcome_point)
-            if key not in fair_prob_by_market:
-                fair_prob_by_market[key] = []
-            fair_prob_by_market[key].append(f_prob2)
+        key = (market_id, price_group[0].outcome_name, price_group[0].outcome_point)
+        if key not in fair_prob_by_market:
+            fair_prob_by_market[key] = []
+        fair_prob_by_market[key].append(f_prob1)
 
-        for (
-            market_id,
-            outcome_name,
-            outcome_point,
-        ), f_probs in fair_prob_by_market.items():
-            true_prob = sum(f_probs) / len(f_probs)
+        key = (market_id, price_group[1].outcome_name, price_group[1].outcome_point)
+        if key not in fair_prob_by_market:
+            fair_prob_by_market[key] = []
+        fair_prob_by_market[key].append(f_prob2)
 
-            new_true_prob = TrueProbability(
-                odds_snapshot_id=odds_snapshot_id,
-                market_id=market_id,
-                outcome_name=outcome_name,
-                outcome_point=outcome_point,
-                true_prob=true_prob,
-                method=TrueProbabilityMethod.VIG_FREE_MEAN,
-            )
+    for (
+        market_id,
+        outcome_name,
+        outcome_point,
+    ), f_probs in fair_prob_by_market.items():
+        true_prob = sum(f_probs) / len(f_probs)
 
-            session.execute(
-                delete(TrueProbability).where(
-                    TrueProbability.odds_snapshot_id == odds_snapshot_id
-                )
-            )
-            session.add(new_true_prob)
-            session.flush()
+        new_true_prob = TrueProbability(
+            odds_snapshot_id=odds_snapshot_id,
+            market_id=market_id,
+            outcome_name=outcome_name,
+            outcome_point=outcome_point,
+            true_prob=true_prob,
+            method=TrueProbabilityMethod.VIG_FREE_MEAN,
+        )
 
+        session.add(new_true_prob)
+        tprob_count += 1
+        print(
+            f"True probability calculated for {outcome_name} at {true_prob * 100:.2f}%"
+        )
 
-compute_true_probability_per_snapshot(1)
+    return tprob_count
