@@ -5,8 +5,8 @@ SEED_SPORTS: list[str] = [
 
 
 SEED_SPORTSBOOKS: list[tuple[str, str]] = [
-    ("draftkings", "DraftKings"),
     ("fanduel", "FanDuel"),
+    ("draftkings", "DraftKings"),
     ("betmgm", "BetMGM"),
     ("betrivers", "BetRivers"),
     ("espnbet", "ESPN Bet"),
@@ -19,6 +19,7 @@ SEED_LEAGUES: list[tuple[str, str, str]] = [
     ("nfl", "football", "NFL"),
 ]
 LEAGUE_KEYS = [key for key, _, _ in SEED_LEAGUES]
+SPORT_LEAGUE_KEYS = [f"{sport}_{league}" for league, sport, _ in SEED_LEAGUES]
 
 
 SEED_TEAMS: dict[str, list[tuple[str, str]]] = {

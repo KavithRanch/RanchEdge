@@ -5,8 +5,7 @@ from app.data_ingest.odds.ingest import ingest_odds
 from app.constants.seed_constants import (
     SPORTSBOOK_KEYS,
     DEFAULT_MARKETS,
-    SEED_SPORTS,
-    LEAGUE_KEYS,
+    SPORT_LEAGUE_KEYS,
 )
 
 
@@ -18,19 +17,22 @@ def parse_args() -> argparse.Namespace:
     argparser.add_argument(
         "--sport_league",
         required=True,
-        help="<sport>_<league> in simple case (e.g. basketball_nba or football_nfl)",
+        help="<sport>_<league> in simple case",
+        choices=SPORT_LEAGUE_KEYS,
     )
     argparser.add_argument(
         "--markets",
         nargs="+",
         default=None,
-        help="Market keys in simple case (h2h spreads totals)",
+        help="Market keys in simple case",
+        choices=DEFAULT_MARKETS,
     )
     argparser.add_argument(
         "--sportsbooks",
         nargs="+",
         default=None,
-        help="Sportsbook keys in simple case (fanduel draftkings betmgm espnbet betrivers)",
+        help="Sportsbook keys in simple case",
+        choices=SPORTSBOOK_KEYS,
     )
     return argparser.parse_args()
 
@@ -47,19 +49,11 @@ def main():
     logging.basicConfig(level=logging.INFO)
     args = parse_args()
 
+    sport_league = args.sport_league
     markets = normalize_list(args.markets) or DEFAULT_MARKETS
     sportsbooks = normalize_list(args.sportsbooks) or SPORTSBOOK_KEYS
 
     # Validating arguments
-    if "_" not in args.sport_league:
-        raise SystemExit(
-            "Invalid --sport_league. Expected format: <sport>_<league> (e.g. basketball_nba)"
-        )
-    else:
-        sport, league = args.sport_league.split("_", 1)
-        if sport not in SEED_SPORTS or league not in LEAGUE_KEYS:
-            raise SystemExit(f"Unknown sport/league: {args.sport_league}")
-
     if args.markets:
         invalid = set(markets) - set(DEFAULT_MARKETS)
         if invalid:
@@ -70,10 +64,17 @@ def main():
         if invalid:
             raise SystemExit(f"Invalid sportsbook(s): {sorted(invalid)}")
 
+    logging.info(
+        "Ingest odds starting: league=%s | markets=%s | books=%s",
+        sport_league,
+        markets,
+        sportsbooks,
+    )
+
     with SessionLocal.begin() as session:
         snapshot_id, counts = ingest_odds(
             session,
-            args.sport_league,
+            sport_league,
             markets,
             sportsbooks,
         )

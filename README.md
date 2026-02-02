@@ -5,6 +5,15 @@ RanchEdge is a data-driven decision-support platform that identifies sport marke
 
 ---
 
+## Table of Contents
+- [Motivation](#motivation)
+- [Key Features](#key-features)
+- [Initial Local Dev Setup](#initial-local-dev-setup)
+- [Tech Stack](#tech-stack)
+- [Project Roadmap](#project-roadmap)
+
+---
+
 ## Motivation
 
 Melting my passions for sports and data analytics, the domain used to explore these ideas is the sports betting markets, but the system design and evaluation principles generalize to other decision-making problems under uncertainty.
@@ -46,15 +55,56 @@ RanchEdge focuses on:
 
 ---
 
-## Versioning
+## Initial Local Dev Setup 
+
+[**Click here for setup instructions**](docs/initial_setup.md)
+
+---
+
+## Tech Stack
+<div align="center">
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" alt="Python" title="Python"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/fastapi.png" alt="FastAPI" title="FastAPI"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png" alt="PostgreSQL" title="PostgreSQL"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/redis.png" alt="redis" title="redis"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png" alt="Next.js" title="Next.js"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png" alt="TypeScript" title="TypeScript"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pytest.png" alt="pytest" title="pytest"/></code>
+	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png" alt="Docker" title="Docker"/></code>
+</div>
+
+### Backend
+- **Python**
+- **FastAPI**
+- **PostgreSQL (Alembis for migrations)**
+- **Celery**
+- **Redis**
+- **SQLAlchemy**
+
+### Frontend
+- **Next.js**
+- **TypeScript**
+
+### Dev / Ops
+- **Docker**
+- **Pytest**
+
+---
+
+## Project Roadmap
 - [ ] ***v1.0.0: Complete MVP***
 - [ ] **v0.10.0**: Performance Dashboard
 - [ ] **v0.9.0**: Bet logging (selection/outcome)
 - [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
 - [ ] **v0.7.0**: Basic API endpoints for EV access
 - [ ] **v0.6.0**: EV Opportunities Generation
-- [ ] **v0.5.0**: True probability calculation
+- [x] **v0.5.0**: True probability calculation
+    * Tidied up logging statements and relative levels
+    * CLI script enables entry point through cmd for true_probability calculation
+    * Created MVP true probability calculation by using vig-free mean of probabilties for each outcome
     * New Model implemented to store calculated true probabilities (one row per market per outcome)
+    * Added pytest integration file which uses sqlite db
+    * Created documentation for 📄[**initial local dev setup**](docs/initial_setup.md) outlining setup accurate as of the completion of v0.5.0
 - [x] **v0.4.0**: Odds Ingestion
     * End-to-end Odds Ingestion Pipeline implemented
         1. Pull from API
@@ -82,24 +132,6 @@ RanchEdge focuses on:
     * **docker-compose.yml** file setup for detailing how subsystems should be connected
     * Up-to-date documentation for my personal understanding of 📄[**docker**](docs/docker_info.md) and 📄[**fastapi**](docs/fastapi_info.md) based on usage of each tool so far
     * Documentation of 📄[**MVP**](docs/mvp.md) outlining **v1.0.0 scope**  
----
-
-## Tech Stack
-### Backend
-- **Python**
-- **FastAPI**
-- **PostgreSQL (Alembis for migrations)**
-- **Celery**
-- **Redis**
-- **SQLAlchemy**
-
-### Frontend
-- **Next.js**
-- **TypeScript**
-
-### Dev / Ops
-- **Docker & docker-compose**
-- **Pytest**
 
 
 

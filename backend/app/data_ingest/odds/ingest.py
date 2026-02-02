@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime, timezone
 from sqlalchemy import select
 
@@ -29,6 +30,8 @@ def get_id(session, stmt, *, entity: str, value: str):
 def ingest_odds(
     session, sport: str, markets: list[str], bookmakers: list[str]
 ) -> tuple[int, dict]:
+
+    logger = logging.getLogger(__name__)
 
     pulled_at = datetime.now(timezone.utc)
     odds_json_response = fetch_odds(sport, markets, bookmakers)
@@ -72,8 +75,15 @@ def ingest_odds(
 
         printable_time = format_datetime(commence_time)
 
-        print(
-            f"Processing event {event_id}: ({printable_time['time']} UTC {printable_time['day']}/{printable_time['month']}/{printable_time['year']}) {away_team} @ {home_team}."
+        logger.debug(
+            "Processing event %s: (%s UTC %s/%s/%s) %s @ %s.",
+            event_id,
+            printable_time["time"],
+            printable_time["day"],
+            printable_time["month"],
+            printable_time["year"],
+            away_team,
+            home_team,
         )
 
         event_db = session.execute(

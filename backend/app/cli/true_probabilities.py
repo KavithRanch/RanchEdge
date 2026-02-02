@@ -1,5 +1,5 @@
-import sys
 import logging
+import argparse
 
 from app.db.session import SessionLocal
 from app.services.true_probabilities import compute_true_probability_per_snapshot
@@ -7,25 +7,31 @@ from app.services.true_probabilities import compute_true_probability_per_snapsho
 
 def main():
     logging.basicConfig(level=logging.INFO)
-    if len(sys.argv) != 2:
-        raise ValueError("Usage: true_probs <snapshot_id>")
 
-    try:
-        snapshot_id = int(sys.argv[1])
-    except ValueError:
-        print("snapshot_id must be an integer")
-        sys.exit(2)
+    argparser = argparse.ArgumentParser(
+        description="Compute true probabilties for a given odds snapshot"
+    )
+    argparser.add_argument(
+        "--snapshot",
+        type=int,
+        required=True,
+        help="Odds snapshot ID to compute true probabilities for",
+    )
+    args = argparser.parse_args()
 
-    new_tprob_count = 0
+    snapshot_id = args.snapshot
 
     logging.info(
-        f"Beginning calculating true probabilities for snapshot #{snapshot_id}..."
+        "Beginning calculating true probabilities for snapshot #%s...",
+        snapshot_id,
     )
     with SessionLocal.begin() as session:
         new_tprob_count = compute_true_probability_per_snapshot(session, snapshot_id)
 
     logging.info(
-        f"True probability calculations complete => rows inserted: {new_tprob_count}"
+        "True probability calculations complete for snapshot %s => rows inserted: %d",
+        snapshot_id,
+        new_tprob_count,
     )
 
 

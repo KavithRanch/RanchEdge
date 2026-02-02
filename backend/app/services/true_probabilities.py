@@ -1,3 +1,4 @@
+import logging
 from sqlalchemy import delete, select
 from app.models.price import Price
 from app.models.true_probabilities import TrueProbability
@@ -7,6 +8,7 @@ from app.constants.enums import TrueProbabilityMethod
 
 
 def compute_true_probability_per_snapshot(session, odds_snapshot_id: int) -> int:
+    logger = logging.getLogger(__name__)
     tprob_count = 0
 
     session.execute(
@@ -28,6 +30,12 @@ def compute_true_probability_per_snapshot(session, odds_snapshot_id: int) -> int
 
     fair_prob_by_market = {}
     for (market_id, _), price_group in groups.items():
+        if len(price_group) != 2:
+            logger.warning(
+                "Market #%s has %d outcomes instead of 2", market_id, len(price_group)
+            )
+            continue
+
         f_prob1, f_prob2 = remove_vig_two_way(
             price_group[0].american_odds, price_group[1].american_odds
         )
@@ -55,13 +63,15 @@ def compute_true_probability_per_snapshot(session, odds_snapshot_id: int) -> int
             outcome_name=outcome_name,
             outcome_point=outcome_point,
             true_prob=true_prob,
-            method=TrueProbabilityMethod.VIG_FREE_MEAN,
+            method=TrueProbabilityMethod.VIG_FREE_MEAN.value,
         )
 
         session.add(new_true_prob)
         tprob_count += 1
-        print(
-            f"True probability calculated for {outcome_name} at {true_prob * 100:.2f}%"
+        logger.debug(
+            "True probability calculated for %s at %.2f%%",
+            outcome_name,
+            true_prob * 100,
         )
 
     return tprob_count
