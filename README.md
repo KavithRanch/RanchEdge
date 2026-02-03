@@ -73,21 +73,22 @@ RanchEdge focuses on:
 	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png" alt="Docker" title="Docker"/></code>
 </div>
 
-### Backend
-- **Python**
-- **FastAPI**
-- **PostgreSQL (Alembis for migrations)**
-- **Celery**
-- **Redis**
-- **SQLAlchemy**
-
-### Frontend
-- **Next.js**
-- **TypeScript**
-
-### Dev / Ops
-- **Docker**
-- **Pytest**
+<table>
+  <thead>
+    <tr>
+      <th><b>Backend<b></th>
+      <th><b>Frontend<b></th>
+      <th><b>Dev/Ops<b></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top">Python<br>PostgreSQL (Alembis migrations)<br>Celery<br>Redis<br>SQLAlchemy</td>
+      <td valign="top">Next.js<br>TypeScript</td>
+      <td valign="top">Docker<br>Pytest</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
