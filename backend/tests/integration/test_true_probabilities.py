@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 from app.db.base import Base
 
-from app.models.price import Price
+from backend.app.models.prices import Price
 from app.models.true_probabilities import TrueProbability
 from app.services.true_probabilities import compute_true_probability_per_snapshot
 from app.math.vig import remove_vig_two_way

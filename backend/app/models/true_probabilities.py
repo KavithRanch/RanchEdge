@@ -34,7 +34,8 @@ class TrueProbability(Base):
             "market_id",
             "outcome_name",
             "outcome_point",
-            name="uq_snapshot_market_outcome_point",
+            "method",
+            name="uq_snapshot_market_outcome_point_method",
         ),
         Index("ix_market_snapshot", "market_id", "odds_snapshot_id"),
     )

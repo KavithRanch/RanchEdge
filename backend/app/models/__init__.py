@@ -3,10 +3,11 @@ from .leagues import League
 from .sports import Sport
 from .events import Event
 from .sportsbooks import Sportsbook
-from .odds_snapshot import OddsSnapshot
+from .odds_snapshots import OddsSnapshot
 from .markets import Market
-from .price import Price
+from .prices import Price
 from .true_probabilities import TrueProbability
+from .ev_opportunities import EvOpportunity
 
 __all__ = [
     "Team",
@@ -18,4 +19,5 @@ __all__ = [
     "Market",
     "Price",
     "TrueProbability",
+    "EvOpportunity",
 ]

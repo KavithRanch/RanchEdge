@@ -63,32 +63,49 @@ RanchEdge focuses on:
 
 ## Tech Stack
 <div align="center">
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" alt="Python" title="Python"/></code>
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/fastapi.png" alt="FastAPI" title="FastAPI"/></code>
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png" alt="PostgreSQL" title="PostgreSQL"/></code>
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/redis.png" alt="redis" title="redis"/></code>
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png" alt="Next.js" title="Next.js"/></code>
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png" alt="TypeScript" title="TypeScript"/></code>
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pytest.png" alt="pytest" title="pytest"/></code>
-	<code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png" alt="Docker" title="Docker"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" alt="Python"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/fastapi.png" alt="FastAPI"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png" alt="PostgreSQL"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/redis.png" alt="Redis"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/next_js.png" alt="Next.js"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png" alt="TypeScript"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png" alt="Docker"/></code>
+    <code><img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/pytest.png" alt="Pytest"/></code>
 </div>
 
-<table>
-  <thead>
-    <tr>
-      <th><b>Backend<b></th>
-      <th><b>Frontend<b></th>
-      <th><b>Dev/Ops<b></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td valign="top">Python<br>PostgreSQL (Alembis migrations)<br>Celery<br>Redis<br>SQLAlchemy</td>
-      <td valign="top">Next.js<br>TypeScript</td>
-      <td valign="top">Docker<br>Pytest</td>
-    </tr>
-  </tbody>
-</table>
+<br><br>
+
+<div align="center">
+  <table>
+    <thead>
+      <tr>
+        <th><b>Backend</b></th>
+        <th><b>Frontend</b></th>
+        <th><b>Dev / Ops</b></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td valign="top" align="center">
+          Python<br>
+          PostgreSQL (Alembic migrations)<br>
+          Celery<br>
+          Redis<br>
+          SQLAlchemy
+        </td>
+        <td valign="top" align="center">
+          Next.js<br>
+          TypeScript
+        </td>
+        <td valign="top" align="center">
+          Docker<br>
+          Pytest
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
 ---
 

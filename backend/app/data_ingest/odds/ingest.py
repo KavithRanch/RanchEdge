@@ -4,9 +4,9 @@ from sqlalchemy import select
 
 from app.models.leagues import League
 from app.models.markets import Market
-from app.models.price import Price
+from backend.app.models.prices import Price
 from app.models.sportsbooks import Sportsbook
-from app.models.odds_snapshot import OddsSnapshot
+from backend.app.models.odds_snapshots import OddsSnapshot
 from app.models.events import Event
 from app.models.teams import Team
 

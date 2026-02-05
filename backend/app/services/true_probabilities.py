@@ -1,6 +1,6 @@
 import logging
 from sqlalchemy import delete, select
-from app.models.price import Price
+from backend.app.models.prices import Price
 from app.models.true_probabilities import TrueProbability
 from app.math.vig import remove_vig_two_way
 
