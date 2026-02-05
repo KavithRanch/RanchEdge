@@ -116,6 +116,7 @@ RanchEdge focuses on:
 - [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
 - [ ] **v0.7.0**: Basic API endpoints for EV access
 - [ ] **v0.6.0**: EV Opportunities Generation
+    * New Model implemented to store calculated ev_opportunities available
 - [x] **v0.5.0**: True probability calculation
     * Tidied up logging statements and relative levels
     * CLI script enables entry point through cmd for true_probability calculation
