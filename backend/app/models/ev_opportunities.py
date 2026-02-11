@@ -8,6 +8,7 @@ from sqlalchemy import (
     UniqueConstraint,
     func,
 )
+
 from app.db.base import Base
 from sqlalchemy.orm import Mapped, mapped_column
 
