@@ -9,17 +9,9 @@ from app.math.ev import ev_per_dollar
 from app.math.odds import american_to_decimal, decimal_to_implied_probability
 
 
-def generate_ev_opportunities(
-    session, odds_snapshot_id: int, min_ev: float = 0.0
-) -> int:
+def generate_ev_opportunities(session, odds_snapshot_id: int, min_ev: float) -> int:
     logger = logging.getLogger(__name__)
-
-    if min_ev < 0.0:
-        logger.warning(
-            "min_ev should be non-negative. Received min_ev=%.2f. Setting min_ev to 0.0.",
-            min_ev,
-        )
-        min_ev = 0.0
+    print(min_ev)
 
     # Delete existing EV opportunities for the given odds snapshot
     session.execute(
