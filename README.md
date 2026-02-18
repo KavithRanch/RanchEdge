@@ -134,7 +134,7 @@ RanchEdge focuses on:
     * Created scripts for filling seed tables and for pulling odds from OddsApi
     * Implemented CLI scripts to setup seeding and data persistence 
     * Designed data ingestion/persistance script
-    * Documented 📄[**Odds Data Pipeline File Structure**](backend/backend_docs/db_folder_structure.md) and 📄[**DB Schema**](backend/backend_docs/db_schema.md)
+    * Documented 📄[**Odds Data Pipeline File Structure**](backend/backend_docs/oddspipline_folder_structure.md) and 📄[**DB Schema**](backend/backend_docs/db_schema.md)
 - [x] **v0.3.0**: Math Engine (book edge removal + EV)
     * Implemented rudimentary odds converter and vig removal for two-way markets (Over/Under)
     * Implemented required EV calculations assuming fair probability is true prob for MVP

@@ -2,24 +2,7 @@
 This document contains all documentation on major files used in the Odds Data Pipeline ingestion including the CLI commands
 
 ## Database Schema Files (./app/models)
-1. **sports.py | leagues.py | teams.py | sportsbooks.py**
-    * These schemas will rarely change are primarily seeding tables to support functionality of the rest of the dynamic tables
-    * They only store meta information about their respective topics (no stats/no odds)
-
-2. **markets.py**
-    * markets.py is one of the tougher table sto understand however, it contains all lines for a specific event and specific market type. This can change as the week goes on.
-    * However, it doesn't hold a line for the moneyline only for markets where there is an over/under line.
-    * Many sportsbooks can point to the same market_id which helps minimize number of entries in the case where many sportsbooks are having the same line
-
-3. **odds_snapshot.py**
-    * On every pull of odds, a new entry is added here so we can keep track of how the odds change through the week
-
-4. **events.py**
-    * This table keeps up to date on upcoming events and only keep metadata related to the event itself (no odds/stats relations)
-    * One per game
-
-4. **prices.py**
-    * Entries in the prices.py table contain all pertinent data regarding prices of a specific market at a certain point in time before the start of the match
+These models files are the layout for how each table is configured and what data they store. The purpose of each individual table is laid out [**here**](db_schema.md)
 
 ## Data Ingestion Files
 ### Seed Files (./app/data_ingest/seed/seed_*.py)

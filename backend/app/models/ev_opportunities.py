@@ -44,7 +44,7 @@ class EvOpportunity(Base):
         nullable=False,
     )
 
-    ev_pct: Mapped[float] = mapped_column(Numeric(10, 6), nullable=False)
+    ev_per_dollar: Mapped[float] = mapped_column(Numeric(10, 6), nullable=False)
     edge: Mapped[float] = mapped_column(Numeric(10, 6), nullable=False)
     is_positive_ev: Mapped[bool] = mapped_column(Boolean, nullable=False)
 
@@ -60,6 +60,6 @@ class EvOpportunity(Base):
             "true_probability_id",
             name="uq_price_trueprob",
         ),
-        Index("ix_evopp_snapshot_ev", "odds_snapshot_id", "ev_pct"),
+        Index("ix_evopp_snapshot_ev", "odds_snapshot_id", "ev_per_dollar"),
         Index("ix_evopp_snapshot_book", "odds_snapshot_id", "sportsbook_id"),
     )

@@ -12,7 +12,7 @@ class Price(Base):
     sportsbook_id: Mapped[int] = mapped_column(
         ForeignKey("sportsbooks.id"), nullable=False
     )
-    snapshot_id: Mapped[int] = mapped_column(
+    odds_snapshot_id: Mapped[int] = mapped_column(
         ForeignKey("odds_snapshots.id"), nullable=False
     )
 
@@ -34,12 +34,12 @@ class Price(Base):
         UniqueConstraint(
             "market_id",
             "sportsbook_id",
-            "snapshot_id",
+            "odds_snapshot_id",
             "outcome_name",
             "outcome_point",
             name="uq_market_sportsbook_snapshot_outcome",
         ),
         Index("ix_market", "market_id"),
         Index("ix_sportsbook", "sportsbook_id"),
-        Index("ix_snapshot", "snapshot_id"),
+        Index("ix_snapshot", "odds_snapshot_id"),
     )

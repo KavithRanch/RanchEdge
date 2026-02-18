@@ -4,9 +4,9 @@ from sqlalchemy import select
 
 from app.models.leagues import League
 from app.models.markets import Market
-from backend.app.models.prices import Price
+from app.models.prices import Price
 from app.models.sportsbooks import Sportsbook
-from backend.app.models.odds_snapshots import OddsSnapshot
+from app.models.odds_snapshots import OddsSnapshot
 from app.models.events import Event
 from app.models.teams import Team
 
@@ -160,7 +160,7 @@ def ingest_odds(
                     stmt = select(Price).where(
                         Price.market_id == market_db.id,
                         Price.sportsbook_id == sportsbook_id,
-                        Price.snapshot_id == new_snapshot.id,
+                        Price.odds_snapshot_id == new_snapshot.id,
                         Price.outcome_name == outcome_name,
                     )
 
@@ -175,7 +175,7 @@ def ingest_odds(
                         price_db = Price(
                             market_id=market_db.id,
                             sportsbook_id=sportsbook_id,
-                            snapshot_id=new_snapshot.id,
+                            odds_snapshot_id=new_snapshot.id,
                             american_odds=american_odds,
                             outcome_name=outcome_name,
                             outcome_point=outcome_point,

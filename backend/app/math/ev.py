@@ -13,8 +13,3 @@ def ev_percentage(american_odds, true_prob: float) -> float:
     """Calculate expected value (EV) percentage."""
     ev = ev_per_dollar(american_odds, true_prob)
     return ev * 100
-
-
-def is_positive_ev(american_odds, true_prob: float) -> bool:
-    """Determine if the expected value (EV) is positive."""
-    return ev_per_dollar(american_odds, true_prob) > 0

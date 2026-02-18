@@ -21,7 +21,7 @@ docker compose exec backend python -m app.cli.seed
 docker compose exec backend python -m app.cli.ingest_odds \
   --sport_league basketball_nba \
   --markets h2h \
-  --sportsbooks fanduel draftkings
+  --sportsbooks fanduel espnbet
 
 # 7. Compute the true probabilities of a snapshot created (if you ran previous command only one then snapshot_id = 1)
 docker compose exec backend python -m app.cli.true_probabilities --snapshot <snapshot_id>
