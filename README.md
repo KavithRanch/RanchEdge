@@ -115,6 +115,8 @@ RanchEdge focuses on:
 - [ ] **v0.9.0**: Bet logging (selection/outcome)
 - [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
 - [ ] **v0.7.0**: Basic API endpoints for EV access
+    * Documentation for 📄[**api/v1/ev_opportunities endpoint**](backend/backend_docs/api_docs/ev_opportunities_api.md) 
+    * Up-to-date documentation for my personal understanding of 📄[**APIs and their design process**](docs/personal_learning/api_design.md) 
 - [x] **v0.6.0**: EV Opportunities Generation
     * Create positive ev opportunity generation and persistence into db using the current true_probability calculation method (Can always change using the constant DEFAULT_TP_METHOD as new ways of calculating it arrive)
     * New Model implemented to store calculated ev_opportunities available
@@ -143,17 +145,17 @@ RanchEdge focuses on:
     * Implemented rudimentary odds converter and vig removal for two-way markets (Over/Under)
     * Implemented required EV calculations assuming fair probability is true prob for MVP
     * Created testing files passing 100%
-    * Created documentation on the process of finding 📄[**EV**](backend/backend_docs/ev_info.md) opportunities and testing in python using 📄[**pytest**](docs/pytest_info.md)
+    * Created documentation on the process of finding 📄[**EV**](backend/backend_docs/ev_info.md) opportunities and testing in python using 📄[**pytest**](docs/personal_learning/pytest_info.md)
 - [x] **v0.2.0**: Database + Alembic Migration Setup
     * engine.py and session.py setup for establishing connections and sessions with database
     * simple model for sportsbook created to test functionality of Alembic migration generation and application
-    * Up-to-date documentation for my personal understanding of how the different 📄[**database-related files**](backend/backend_docs/db_folder_structure.md) required work together and 📄[**general database info**](docs/database_info.md)
+    * Up-to-date documentation for my personal understanding of how the different 📄[**database-related files**](backend/backend_docs/db_folder_structure.md) required work together and 📄[**general database info**](docs/personal_learning/database_info.md)
 - [x] **v0.1.0**: Project Skeleton
     * Skeleton project structure created 
     * Basic FastAPI `/health` endpoint created for testing responsiveness
     * **backend** Dockerfile & requirements.txt setup for containerization
     * **docker-compose.yml** file setup for detailing how subsystems should be connected
-    * Up-to-date documentation for my personal understanding of 📄[**docker**](docs/docker_info.md) and 📄[**fastapi**](docs/fastapi_info.md) based on usage of each tool so far
+    * Up-to-date documentation for my personal understanding of 📄[**docker**](docs/personal_learning/docker_info.md) and 📄[**fastapi**](docs/personal_learning/fastapi_info.md) based on usage of each tool so far
     * Documentation of 📄[**MVP**](docs/mvp.md) outlining **v1.0.0 scope**  
 
 
