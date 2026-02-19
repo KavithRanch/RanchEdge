@@ -45,6 +45,22 @@ docker compose exec backend python -m app.cli.ingest_odds --sport_league basketb
 docker compose exec backend python -m app.cli.ingest_odds --sport_league basketball_nba --markets h2h --sportsbooks fanduel espnbet
 ```
 
+3. **true_probabilities.py**
+    * Runs the `compute_true_probability_per_snapshot()` within `services\true_probabilities.py` to compute true probabilities for each outcome of markets for a given snapshot
+    * Each one is persisted into the true probabilities table 
+    * Must have `--snapshot` tag whose argument refers to the snapshot_id we are looking to analyze
+```bash
+docker compose exec backend python -m app.cli.true_probabilities --snapshot 1
+```
+
+4. **ev_opportunities.py**
+    * Runs the `generate_ev_opportunities()` within `services\ev_opportunities.py` to compute and check for any positive ev opportunities for a given snapshot based on each price entry for that snapshot and the associated true probability.
+    * Each one is persisted into the ev opportunities table 
+    * Must have `--snapshot` tag whose argument refers to the snapshot_id we are looking to analyze
+```bash
+docker compose exec backend python -m app.cli.ev_opportunities --snapshot 1
+```
+
 ## Database Connectivity Files (./app/db)
 1. **engine.py**
     * The engine.py file serves as the medium for connecting to Postgres. It doesn't open connections but just create the engine which will faciliate connections

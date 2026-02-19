@@ -32,5 +32,5 @@ Up-to-date as of Release 0.6.0
     * One per market/snapshot/outcome_name
 
 7. **ev_opportunity.py**
-    * This table contains the expected value opportunities that are positive over the long term
-    * One per price assuming it is positive using the related true probability for that market/outcome
+    * This table contains the expected value opportunities that are positive
+    * One per price assuming its ev is positive using the related true probability for that market/outcome

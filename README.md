@@ -115,14 +115,18 @@ RanchEdge focuses on:
 - [ ] **v0.9.0**: Bet logging (selection/outcome)
 - [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
 - [ ] **v0.7.0**: Basic API endpoints for EV access
-- [ ] **v0.6.0**: EV Opportunities Generation
+- [x] **v0.6.0**: EV Opportunities Generation
+    * Create positive ev opportunity generation and persistence into db using the current true_probability calculation method (Can always change using the constant DEFAULT_TP_METHOD as new ways of calculating it arrive)
     * New Model implemented to store calculated ev_opportunities available
+    * CLI script enables entry point through cmd for ev_opportunity generation
+    * Added pytest integration file which uses a temporary sqlite db
+    * Updated documentation for 📄[**initial local dev setup**](docs/initial_setup.md), 📄[**Odds Data Pipeline File Structure**](backend/backend_docs/oddspipline_folder_structure.md), 📄[**DB Schema**](backend/backend_docs/db_schema.md) and 📄[**EV**](backend/backend_docs/ev_info.md) 
 - [x] **v0.5.0**: True probability calculation
     * Tidied up logging statements and relative levels
     * CLI script enables entry point through cmd for true_probability calculation
     * Created MVP true probability calculation by using vig-free mean of probabilties for each outcome
     * New Model implemented to store calculated true probabilities (one row per market per outcome)
-    * Added pytest integration file which uses sqlite db
+    * Added pytest integration file which uses a temporary sqlite db
     * Created documentation for 📄[**initial local dev setup**](docs/initial_setup.md) outlining setup accurate as of the completion of v0.5.0
 - [x] **v0.4.0**: Odds Ingestion
     * End-to-end Odds Ingestion Pipeline implemented

@@ -12,8 +12,9 @@ It powers decisions in a plethora of fields including business-related decisions
     * Similar to trading fees/spread which allow investment firms to guarantee a profit regardless of how your investment goes.
 3. Remove Vig to get "Fair Probability"
     * Normalize the implied probability to get the book's probability out of 100
-4. Estimate True probability 
-    * This is our data-driven assessment which also uses fair probability to put together our own true probability on the event
+4. Estimate True probability (Methods will be refined with future releases)
+    * This is our data-driven assessment which also uses fair probability to put together our own true probability on the event.
+    * **As of 0.6.0**: We take mean of all fair probabilities for an outcome over all sportsbooks as our True Probability
 5. EV calculation
     * To calculate EV we use the decimal odds and our true probability
 6. Check if it is a +EV opportunity meeting a certain threshold (eg. > 4%)

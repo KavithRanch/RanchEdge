@@ -23,8 +23,10 @@ docker compose exec backend python -m app.cli.ingest_odds \
   --markets h2h \
   --sportsbooks fanduel espnbet
 
-# 7. Compute the true probabilities of a snapshot created (if you ran previous command only one then snapshot_id = 1)
+# 7. Compute the true probabilities of an existing snapshot (if you ran previous command only one then snapshot_id = 1)
 docker compose exec backend python -m app.cli.true_probabilities --snapshot <snapshot_id>
 
+# 8. Compute the search for positive ev opportunities of an existing snapshot
+docker compose exec backend python -m app.cli.ev_opportunities --snapshot <snapshot_id>
 # You're all set for now!
 ```
