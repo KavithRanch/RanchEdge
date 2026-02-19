@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 from app.db.base import Base
 
-from backend.app.models.prices import Price
+from app.models.prices import Price
 from app.models.true_probabilities import TrueProbability
 from app.services.true_probabilities import compute_true_probability_per_snapshot
 from app.math.vig import remove_vig_two_way
@@ -38,7 +38,7 @@ def test_compute_true_probability_per_snapshot_two_way_idempotent(session):
             Price(
                 market_id=market_id,
                 sportsbook_id=dk,
-                snapshot_id=snapshot_id,
+                odds_snapshot_id=snapshot_id,
                 american_odds=-150,
                 outcome_name="TeamA",
                 outcome_point=None,
@@ -46,7 +46,7 @@ def test_compute_true_probability_per_snapshot_two_way_idempotent(session):
             Price(
                 market_id=market_id,
                 sportsbook_id=dk,
-                snapshot_id=snapshot_id,
+                odds_snapshot_id=snapshot_id,
                 american_odds=130,
                 outcome_name="TeamB",
                 outcome_point=None,
@@ -60,7 +60,7 @@ def test_compute_true_probability_per_snapshot_two_way_idempotent(session):
             Price(
                 market_id=market_id,
                 sportsbook_id=fd,
-                snapshot_id=snapshot_id,
+                odds_snapshot_id=snapshot_id,
                 american_odds=-160,
                 outcome_name="TeamA",
                 outcome_point=None,
@@ -68,7 +68,7 @@ def test_compute_true_probability_per_snapshot_two_way_idempotent(session):
             Price(
                 market_id=market_id,
                 sportsbook_id=fd,
-                snapshot_id=snapshot_id,
+                odds_snapshot_id=snapshot_id,
                 american_odds=140,
                 outcome_name="TeamB",
                 outcome_point=None,

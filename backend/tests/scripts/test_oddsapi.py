@@ -1,7 +1,7 @@
 from app.data_ingest.odds.oddsapi_client import fetch_odds
 
 
-def test_fetch_odds_success() -> list[dict]:
+def test_fetch_odds_success():
     # Mock parameters
     sport = "basketball_nba"
     markets = ["h2h", "spreads", "totals"]
@@ -14,7 +14,7 @@ def test_fetch_odds_success() -> list[dict]:
     except RuntimeError as e:
         print(f"RuntimeError occurred: {e}")
 
-    return odds_data
+    assert odds_data is not None
 
 
 if __name__ == "__main__":

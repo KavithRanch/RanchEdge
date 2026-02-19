@@ -7,11 +7,11 @@ host = os.getenv("ODDS_API_HOST")
 key = os.getenv("ODDS_API_KEY")
 print("Host:", host, "Key:", key)
 
-endpoint = "/v4/sports/basketball_nba/participants?apiKey=" + key
+endpoint = f"/v4/sports/basketball_nba/participants?apiKey={key}"
 
-print("Endpoint:", host + endpoint)
+print(f"Endpoint: {host}{endpoint}")
 
-response = requests.get(host + endpoint)
+response = requests.get(f"{host}{endpoint}")
 print("Response Status Code:", response.status_code)
 print("Response Content:", response.content)
 

@@ -33,13 +33,16 @@ def main():
         min_ev,
     )
     with SessionLocal.begin() as session:
-        new_ev_count = generate_ev_opportunities(session, snapshot_id, min_ev)
+        new_ev_count, price_count = generate_ev_opportunities(
+            session, snapshot_id, min_ev
+        )
 
     if new_ev_count != 0:
         logging.info(
-            "EV opportunities calculations complete for snapshot %s => rows inserted: %d",
+            "EV opportunities calculations complete for snapshot %s => rows inserted: %d, prices analyzed: %d",
             snapshot_id,
             new_ev_count,
+            price_count,
         )
     else:
         logging.error(

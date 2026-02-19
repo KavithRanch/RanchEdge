@@ -9,9 +9,12 @@ from app.math.ev import ev_per_dollar
 from app.math.odds import american_to_decimal, decimal_to_implied_probability
 
 
-def generate_ev_opportunities(session, odds_snapshot_id: int, min_ev: float) -> int:
+def generate_ev_opportunities(session, odds_snapshot_id: int, min_ev: float) -> list[int]:
     logger = logging.getLogger(__name__)
-    print(min_ev)
+
+    if min_ev < 0:
+        logger.warning("Minimum EV threshold cannot be negative. Defaulting to 0.0.")
+        min_ev = 0.0
 
     # Delete existing EV opportunities for the given odds snapshot
     session.execute(
@@ -49,7 +52,9 @@ def generate_ev_opportunities(session, odds_snapshot_id: int, min_ev: float) -> 
     prices_tp = session.execute(stmt).fetchall()
 
     ev_count = 0
+    price_count = 0
     for price, tp_id, true_prob, event_id in prices_tp:
+        price_count += 1
         tp = float(true_prob)
         ev = ev_per_dollar(tp, price.american_odds)
         if ev > min_ev:
@@ -78,4 +83,4 @@ def generate_ev_opportunities(session, odds_snapshot_id: int, min_ev: float) -> 
                 price.id,
             )
 
-    return ev_count
+    return [ev_count, price_count]
