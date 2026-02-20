@@ -115,7 +115,7 @@ RanchEdge focuses on:
 - [ ] **v0.9.0**: Bet logging (selection/outcome)
 - [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
 - [ ] **v0.7.0**: Basic API endpoints for EV access
-    * Documentation for 📄[**api/v1/ev_opportunities endpoint**](backend/backend_docs/api_docs/ev_opportunities_api.md) 
+    * Documentation for 📄[`api/v1/ev_opportunities`](backend/backend_docs/api_docs/ev_opportunities_api.md) endpoint 
     * Up-to-date documentation for my personal understanding of 📄[**APIs and their design process**](docs/personal_learning/api_design.md) 
 - [x] **v0.6.0**: EV Opportunities Generation
     * Create positive ev opportunity generation and persistence into db using the current true_probability calculation method (Can always change using the constant DEFAULT_TP_METHOD as new ways of calculating it arrive)
