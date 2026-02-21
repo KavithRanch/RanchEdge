@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.v1.ev_opportunities import router as ev_opportunities_router
+from app.api.v1 import ev_opportunities_router
 
 # Create FastAPI instance
 app = FastAPI()

@@ -17,6 +17,7 @@ def get_ev_opportunities(
     sort: Annotated[list[EVSortingMethod], Query(description="Sort by ev, edge, start time or pulled at")] = [EVSortingMethod.EV_DESC],
 ):
     # Placeholder implementation - replace with actual logic to fetch and filter EV opportunities
+    
     return {
         "limit": limit,
         "offset": offset,
