@@ -1,11 +1,12 @@
 from fastapi import APIRouter, Query
 from typing import Annotated
 from app.constants.enums import EVSortingMethod
+from app.schemas.ev_opportunities_response import EVOpportunitiesPage
 
 router = APIRouter(prefix="/api/v1/ev-opportunities", tags=["EV Opportunities"])
 
 
-@router.get("/")
+@router.get("/", response_model=EVOpportunitiesPage)
 def get_ev_opportunities(
     limit: Annotated[int, Query(description="The maximum number of EV opportunities to return", le=50)] = 20,
     offset: int = 0,
@@ -17,7 +18,7 @@ def get_ev_opportunities(
     sort: Annotated[list[EVSortingMethod], Query(description="Sort by ev, edge, start time or pulled at")] = [EVSortingMethod.EV_DESC],
 ):
     # Placeholder implementation - replace with actual logic to fetch and filter EV opportunities
-    
+
     return {
         "limit": limit,
         "offset": offset,

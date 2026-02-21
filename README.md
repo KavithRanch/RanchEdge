@@ -115,6 +115,9 @@ RanchEdge focuses on:
 - [ ] **v0.9.0**: Bet logging (selection/outcome)
 - [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
 - [ ] **v0.7.0**: Basic API endpoints for EV access
+    * Created "Controller" Layer (router within api/v1) and Service Layer for ev opportunities endpoint
+    * Defined API Schemas to support return object for ev opportunities
+    * Updated documentation for 📄[**FastAPI**](docs/personal_learning/fastapi_info.md) with use cases 
     * Documentation for 📄[`api/v1/ev_opportunities`](backend/backend_docs/api_docs/ev_opportunities_api.md) endpoint 
     * Up-to-date documentation for my personal understanding of 📄[**APIs and their design process**](docs/personal_learning/api_design.md) 
 - [x] **v0.6.0**: EV Opportunities Generation
@@ -122,7 +125,7 @@ RanchEdge focuses on:
     * New Model implemented to store calculated ev_opportunities available
     * CLI script enables entry point through cmd for ev_opportunity generation
     * Added pytest integration file which uses a temporary sqlite db
-    * Updated documentation for 📄[**initial local dev setup**](docs/initial_setup.md), 📄[**Odds Data Pipeline File Structure**](backend/backend_docs/oddspipline_folder_structure.md), 📄[**DB Schema**](backend/backend_docs/db_schema.md) and 📄[**EV**](backend/backend_docs/ev_info.md) 
+    * Updated documentation for 📄[**initial local dev setup**](docs/initial_setup.md), 📄[**Odds Data Pipeline File Structure**](backend/backend_docs/oddspipeline_folder_structure.md), 📄[**DB Schema**](backend/backend_docs/db_schema.md) and 📄[**EV**](backend/backend_docs/ev_info.md) 
 - [x] **v0.5.0**: True probability calculation
     * Tidied up logging statements and relative levels
     * CLI script enables entry point through cmd for true_probability calculation
@@ -155,7 +158,7 @@ RanchEdge focuses on:
     * Basic FastAPI `/health` endpoint created for testing responsiveness
     * **backend** Dockerfile & requirements.txt setup for containerization
     * **docker-compose.yml** file setup for detailing how subsystems should be connected
-    * Up-to-date documentation for my personal understanding of 📄[**docker**](docs/personal_learning/docker_info.md) and 📄[**fastapi**](docs/personal_learning/fastapi_info.md) based on usage of each tool so far
+    * Up-to-date documentation for my personal understanding of 📄[**docker**](docs/personal_learning/docker_info.md) and 📄[**FastAPI**](docs/personal_learning/fastapi_info.md) based on usage of each tool so far
     * Documentation of 📄[**MVP**](docs/mvp.md) outlining **v1.0.0 scope**  
 
 

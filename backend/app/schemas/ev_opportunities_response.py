@@ -5,35 +5,37 @@ from pydantic import BaseModel
 class EVOpportunityOut(BaseModel):
     """Response model for EV opportunities."""
 
-    # Ev related fields
+    # Ev related fields (All from ev_opportunities table)
     ev_per_dollar: float
     edge: float
     is_positive_ev: bool
 
-    # Odds and probability fields
+    # Odds and probability fields (from join on true_probabilities table)
     true_prob: float
-    implied_prob: float
-    american_odds: int
-    decimal_odds: float
     true_prob_method: str
 
-    #  Event and market details
-    market_type: str
+    american_odds: int # From join on prices table
+    implied_prob: float # Must be calculated from decimal odds
+    decimal_odds: float # Must be calculated from american odds
+
+    #  Event and market details (from join on prices table except market_type)
     outcome_name: str
     outcome_point: float | None
+    market_type: str # From join on markets table
 
-    # Metadata fields for filtering and identification
+    # Metadata fields for filtering and identification 
+    # (All from ev_opportunities table except league_id)
     ev_opportunity_id: int
     event_id: int
-    league_id: int
     sportsbook_id: int
     market_id: int
+    league_id: int # From join on events table 
 
-    # Timestamp fields
+    # Timestamp fields (from join on events table)
     start_time: datetime
-    pulled_at: datetime
+    pulled_at: datetime # From join on snapshot table
 
-    # Display fields
+    # Display fields (From joins on events table, leagues, sportsbooks and teams tables)
     league_abv: str
     sportsbook_display_name: str
     home_team_id: int
@@ -44,7 +46,7 @@ class EVOpportunityOut(BaseModel):
     away_team_abv: str
 
 
-class EVOppPaginationResponse(BaseModel):
+class EVOpportunitiesPage(BaseModel):
     """Response model for paginated EV opportunities."""
 
     next_offset: int | None  # Offset for the next page of results, or None if there are no more results
