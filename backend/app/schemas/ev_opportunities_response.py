@@ -48,6 +48,6 @@ class EVOpportunityOut(BaseModel):
 
 class EVOpportunitiesPage(BaseModel):
     """Response model for paginated EV opportunities."""
-
+    total: int # Total number of EV opportunities matching the filters
     next_offset: int | None  # Offset for the next page of results, or None if there are no more results
     ev_opportunities: list[EVOpportunityOut]
