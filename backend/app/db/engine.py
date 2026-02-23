@@ -1,3 +1,11 @@
+"""
+This module sets up the SQLAlchemy engine for database interactions.
+It creates an engine instance that can be used throughout the application from the DB URL.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 import os
 from sqlalchemy import create_engine
 

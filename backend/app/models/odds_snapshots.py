@@ -1,3 +1,13 @@
+"""
+This module defines the OddsSnapshot model for the application.
+The OddsSnapshot model represents a snapshot of the odds data pulled from an external source at a specific point in time.
+It includes fields for the source of the odds data, the timestamp when the data was pulled and the entry creation timestamp.
+Its values are populated through the ingest_odds.py script when a call is made to an external apis.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from app.db.base import Base
 from sqlalchemy import DateTime, Index, func
 from sqlalchemy.orm import Mapped, mapped_column

@@ -1,3 +1,13 @@
+"""
+This module defines the Market model for the application.
+The Market model represents a betting market for a specific event, such as "Moneyline", "Spread", or "Total".
+It includes fields for the associated event, betting market type, period, line and an entry creation timestamp.
+Its fields are populated through the ingest_odds.py script when processing the odds data from external apis.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from app.db.base import Base
 from sqlalchemy import DateTime, ForeignKey, Index, UniqueConstraint, func, Numeric
 from sqlalchemy.orm import Mapped, mapped_column

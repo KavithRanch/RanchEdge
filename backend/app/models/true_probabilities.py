@@ -1,3 +1,14 @@
+"""
+This module defines the TrueProbability model for this applciation
+It represents the true probabilities of outcomes for a given market and odds snapshot.
+It includes fields for the associate odds snapshot and market
+It also includes fields for outcome name, outcome point, true probability, true probability calculation method, and the entry creation timestamp.
+Its values are populated through the true_probability.py cli script which calculates true probabilities based on the ingested odds data and the selected calculation method for a given snapshot.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from app.db.base import Base
 from datetime import datetime
 from sqlalchemy import DateTime, ForeignKey, Index, Numeric, UniqueConstraint, func
@@ -9,12 +20,8 @@ class TrueProbability(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
 
-    odds_snapshot_id: Mapped[int] = mapped_column(
-        ForeignKey("odds_snapshots.id", ondelete="CASCADE"), nullable=False, index=True
-    )
-    market_id: Mapped[int] = mapped_column(
-        ForeignKey("markets.id", ondelete="CASCADE"), nullable=False, index=True
-    )
+    odds_snapshot_id: Mapped[int] = mapped_column(ForeignKey("odds_snapshots.id", ondelete="CASCADE"), nullable=False, index=True)
+    market_id: Mapped[int] = mapped_column(ForeignKey("markets.id", ondelete="CASCADE"), nullable=False, index=True)
 
     outcome_name: Mapped[str] = mapped_column(nullable=False)
     outcome_point: Mapped[float] = mapped_column(Numeric(8, 3), nullable=True)

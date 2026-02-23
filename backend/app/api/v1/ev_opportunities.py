@@ -24,8 +24,6 @@ def get_ev_opportunities(
         EVSortingMethod.EDGE_DESC,
     ],
 ):
-    # Placeholder implementation - replace with actual logic to fetch and filter EV opportunities
-
     with SessionLocal() as session:
         return fetch_ev_opportunities(
             session=session,

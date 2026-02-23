@@ -1,3 +1,13 @@
+"""
+This module defines the Sport model for the application.
+The Sport model represents a sport that can be associated with leagues.
+It includes fields for the sport's name and timestamps.
+Its values are seeded through the seed.py cli script.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from sqlalchemy import DateTime, func
 from app.db.base import Base
 from sqlalchemy.orm import Mapped, mapped_column

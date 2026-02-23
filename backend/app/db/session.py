@@ -1,3 +1,11 @@
+"""
+This module manages database sessions using SQLAlchemy's sessionmaker.
+It provides a function to get a new database session that can be used in API endpoints or other parts of the application.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from sqlalchemy.orm import sessionmaker
 from app.db.engine import engine
 

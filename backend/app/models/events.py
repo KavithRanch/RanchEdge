@@ -1,3 +1,13 @@
+"""
+This module defines the Event model for the application.
+The Event model represents a sports event, such as a game or match, for which betting markets and odds are available.
+It includes fields for the associated league, home and away teams, odds source information, start time and an entry creation timestamp.
+Its values are populated through the ingest_odds.py script when processing the odds data from external apis.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from app.db.base import Base
 from sqlalchemy import DateTime, ForeignKey, Index, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column
@@ -15,9 +25,7 @@ class Event(Base):
     source: Mapped[str] = mapped_column(nullable=False)
     source_event_id: Mapped[str] = mapped_column(nullable=False)
 
-    start_time: Mapped[datetime] = mapped_column(
-        DateTime(timezone=True), nullable=False
-    )
+    start_time: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         nullable=False,

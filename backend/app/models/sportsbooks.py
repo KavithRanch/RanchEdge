@@ -1,3 +1,13 @@
+"""
+This module defines the Sportsbook model for this application.
+It represents a sportsbook that provides odds data for various markets.
+It includes fields for the sportsbook name, display name, region, active status and for the entry creation and update timestamps.
+Its values are seeded through the seed.py cli script to be setup as base data.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from sqlalchemy import DateTime, func
 from app.db.base import Base
 from sqlalchemy.orm import Mapped, mapped_column

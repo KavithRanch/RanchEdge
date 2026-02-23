@@ -1,3 +1,13 @@
+"""
+This module defines the Team model for the application.
+The Team model represents a sports team that can be associated with a league and events.
+It includes fields for the team's name, abbreviation, associated league, active status, and timestamps.
+Its values are seeded through the seed.py cli script.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from sqlalchemy import DateTime, ForeignKey, UniqueConstraint, func
 from app.db.base import Base
 from sqlalchemy.orm import Mapped, mapped_column

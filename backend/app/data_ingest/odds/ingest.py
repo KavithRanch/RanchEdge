@@ -1,3 +1,11 @@
+"""
+This module is responsible for ingesting odds data from the OddsAPI and persisting it in the relevant database tables.
+It specifically creates a new OddsSnapshot entry and updates the Events, Markets, and Prices tables based on the data retrieved from the API.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 import logging
 from datetime import datetime, timezone
 from sqlalchemy import select
@@ -19,17 +27,18 @@ SOURCE = "OddsAPI"
 
 
 def get_id(session, stmt, *, entity: str, value: str):
+    """Helper function to execute a select statement and return the ID of the resulting object."""
+
+    # Execute the statement and fetch the ID of the resulting object, or raise an error if not found
     obj_id = session.execute(stmt).scalar_one_or_none()
     if obj_id is None:
-        raise ValueError(
-            f"Missing {entity} for '{value}'. Did you run seed? / is the key correct?"
-        )
+        raise ValueError(f"Missing {entity} for '{value}'. Did you run seed? / is the key correct?")
     return obj_id
 
 
-def ingest_odds(
-    session, sport: str, markets: list[str], bookmakers: list[str]
-) -> tuple[int, dict]:
+def ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) -> tuple[int, dict]:
+    """Ingest odds data from the OddsAPI and persist it in the database.
+    Returns the ID of the created OddsSnapshot and a dictionary with counts of new events, markets  for logging purposes"""
 
     logger = logging.getLogger(__name__)
 
@@ -86,11 +95,7 @@ def ingest_odds(
             home_team,
         )
 
-        event_db = session.execute(
-            select(Event).where(
-                Event.source == SOURCE, Event.source_event_id == event_id
-            )
-        ).scalar_one_or_none()
+        event_db = session.execute(select(Event).where(Event.source == SOURCE, Event.source_event_id == event_id)).scalar_one_or_none()
 
         if event_db is None:
             event_db = Event(
@@ -111,9 +116,7 @@ def ingest_odds(
         for bookmaker in event["bookmakers"]:
             sportsbook_id = get_id(
                 session,
-                select(Sportsbook.id).where(
-                    Sportsbook.sportsbook_name == bookmaker["key"]
-                ),
+                select(Sportsbook.id).where(Sportsbook.sportsbook_name == bookmaker["key"]),
                 entity="Sportsbook",
                 value=bookmaker["key"],
             )

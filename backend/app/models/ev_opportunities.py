@@ -1,3 +1,14 @@
+"""
+This module defines the EvOpportunity model for the application.
+The EvOpportunity model represents an expected value (EV) betting opportunity identified in the ingested odds data.
+It includes fields for the associated odds snapshot, price, true probability, event, market and sportsbook.
+It also includes fields for the calculated EV per dollar, edge, whether it's a positive EV opportunity and entry creation timestamps.
+Its values are populated through the ev_opportunities.py cli script which identifies EV opportunities based on the price and true probability data for a given snapshot.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from datetime import datetime
 from sqlalchemy import (
     Boolean,

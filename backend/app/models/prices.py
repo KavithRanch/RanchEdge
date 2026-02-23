@@ -1,3 +1,14 @@
+"""
+
+This module defines the Price model for the application.
+The Price model represents the odds for a specific outcome in a betting market for a given event, as offered by a specific sportsbook at a specific point in time (odds snapshot).
+It includes fields for the associated market, sportsbook, odds snapshot, the American odds value, outcome identifiers (name and point) and the entry creation timestamp.
+Its values are populated through the ingest_odds.py script when processing the odds data from external apis.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from app.db.base import Base
 from sqlalchemy import DateTime, ForeignKey, Index, Numeric, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column
@@ -9,12 +20,8 @@ class Price(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     market_id: Mapped[int] = mapped_column(ForeignKey("markets.id"), nullable=False)
-    sportsbook_id: Mapped[int] = mapped_column(
-        ForeignKey("sportsbooks.id"), nullable=False
-    )
-    odds_snapshot_id: Mapped[int] = mapped_column(
-        ForeignKey("odds_snapshots.id"), nullable=False
-    )
+    sportsbook_id: Mapped[int] = mapped_column(ForeignKey("sportsbooks.id"), nullable=False)
+    odds_snapshot_id: Mapped[int] = mapped_column(ForeignKey("odds_snapshots.id"), nullable=False)
 
     american_odds: Mapped[int] = mapped_column(nullable=False)
 
