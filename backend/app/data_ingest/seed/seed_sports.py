@@ -1,3 +1,13 @@
+"""
+This module contains the function to seed the sports table with predefined data.
+
+Functions:
+- seed_sports(session: Session) -> int: Seeds the sports table with predefined data and returns the count of new sports added.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.models.sports import Sport
@@ -5,7 +15,9 @@ from app.constants.seed_constants import SEED_SPORTS
 
 
 def seed_sports(session: Session) -> int:
+    """Seeds the sports table with predefined data."""
     new_sport_count = 0
+    # Iterate through the predefined sport data and add new sports to the database
     for sport in SEED_SPORTS:
         # Check if the sport already exists
         select_sport = select(Sport).where(Sport.name == sport)

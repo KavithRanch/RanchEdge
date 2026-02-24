@@ -1,3 +1,12 @@
+'''
+This module provides a client for fetching sports odds data from the OddsApi.
+Functions:
+- fetch_odds(sport: str, markets: list[str], bookmakers: list[str]): Fetches odds data for a specified sport, markets, and bookmakers from the OddsApi.
+
+Author: Kavith Ranchagoda
+Last Updated:
+'''
+
 import os
 import requests
 

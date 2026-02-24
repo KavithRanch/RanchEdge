@@ -1,3 +1,11 @@
+"""
+This module provides a CLI command to compute expected value (EV) opportunities for a given odds snapshot.
+It identifies bets with positive EV based on the odds and probabilities in the snapshot, and inserts these opportunities into the database.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 import logging
 import argparse
 
@@ -8,23 +16,27 @@ from app.services.ev_opportunities import generate_ev_opportunities
 def main():
     logging.basicConfig(level=logging.INFO)
 
-    argparser = argparse.ArgumentParser(
-        description="Compute EV opportunities for a given odds snapshot"
-    )
+    # Set up argument parser for CLI
+    argparser = argparse.ArgumentParser(description="Compute EV opportunities for a given odds snapshot")
+
+    # Required argument for snapshot ID
     argparser.add_argument(
         "--snapshot",
         type=int,
         required=True,
         help="Odds snapshot ID to compute EV opportunities for",
     )
+
+    # Optional argument for minimum EV threshold
     argparser.add_argument(
         "--min_ev",
         type=float,
         default=0.0,
         help="Non-neg Minimum EV threshold to consider an opportunity (defaults to 0.0)",
     )
-    args = argparser.parse_args()
 
+    # Parse the command-line arguments
+    args = argparser.parse_args()
     snapshot_id, min_ev = args.snapshot, args.min_ev
 
     logging.info(
@@ -32,10 +44,10 @@ def main():
         snapshot_id,
         min_ev,
     )
+
+    # Generate EV opportunities and insert into the database
     with SessionLocal.begin() as session:
-        new_ev_count, price_count = generate_ev_opportunities(
-            session, snapshot_id, min_ev
-        )
+        new_ev_count, price_count = generate_ev_opportunities(session, snapshot_id, min_ev)
 
     if new_ev_count != 0:
         logging.info(

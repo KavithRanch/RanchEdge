@@ -1,3 +1,12 @@
+"""
+This module defines the API endpoint for retrieving EV (Expected Value) opportunities.
+It allows clients to query for EV opportunities with various filtering and sorting options, such as limiting the number of results, filtering by league or sportsbook, and sorting by EV or edge.
+The endpoint interacts with the database to fetch the relevant data and returns it in a structured format.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 from fastapi import APIRouter, Query
 from typing import Annotated
 from app.constants.enums import EVSortingMethod
@@ -8,6 +17,7 @@ from backend.app.db.session import SessionLocal
 router = APIRouter(prefix="/api/v1/ev-opportunities", tags=["EV Opportunities"])
 
 
+# Endpoint to retrieve EV opportunities with various filtering and sorting options
 @router.get("/", response_model=EVOpportunitiesPage)
 def get_ev_opportunities(
     limit: Annotated[int, Query(description="The maximum number of EV opportunities to return", ge=1, le=50)] = 20,
@@ -24,6 +34,8 @@ def get_ev_opportunities(
         EVSortingMethod.EDGE_DESC,
     ],
 ):
+
+    # Create a new database session and fetch EV opportunities based on the provided query parameters
     with SessionLocal() as session:
         return fetch_ev_opportunities(
             session=session,

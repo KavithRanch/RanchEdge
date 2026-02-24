@@ -1,3 +1,12 @@
+"""
+This module provides a CLI command to seed the database with base data for sports, leagues, teams, and sportsbooks.
+It allows users to specify which category of data to seed (or all) and then processes the relevant data to populate the corresponding tables in the database.
+Typical use case will be to run this command once after setting up the database to ensure all necessary reference data is present for subsequent operations.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 import logging
 import argparse
 
@@ -10,8 +19,11 @@ from app.db.session import SessionLocal
 
 def main():
     logging.basicConfig(level=logging.INFO)
+
+    # Set up argument parser for CLI
     argparser = argparse.ArgumentParser(description="Setup seed tables with base data")
 
+    # Argument to specify which category of data to seed
     argparser.add_argument(
         "--category",
         type=str,
@@ -21,11 +33,14 @@ def main():
         default="all",
     )
 
+    # Parse the arguments
     args = argparser.parse_args()
-
     target = args.category
 
     logging.info(f"Beginning seeding for {target}...")
+
+    # Seed the database based on the specified target category
+    # and log the number of new records added for each category
     with SessionLocal.begin() as session:
         if target in ("all", "sports"):
             new_sports_count = seed_sports(session)

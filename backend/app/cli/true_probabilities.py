@@ -1,3 +1,11 @@
+"""
+This module provides a CLI command to compute true probabilities for a given odds snapshot.
+It calculates the implied probabilities from the odds in the snapshot, applies a normalization to account for the bookmaker's margin, and inserts the true probabilities into the database.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 import logging
 import argparse
 
@@ -8,23 +16,27 @@ from app.services.true_probabilities import compute_true_probability_per_snapsho
 def main():
     logging.basicConfig(level=logging.INFO)
 
-    argparser = argparse.ArgumentParser(
-        description="Compute true probabilties for a given odds snapshot"
-    )
+    # Set up argument parser for CLI
+    argparser = argparse.ArgumentParser(description="Compute true probabilties for a given odds snapshot")
+
+    # Add argument for snapshot ID
     argparser.add_argument(
         "--snapshot",
         type=int,
         required=True,
         help="Odds snapshot ID to compute true probabilities for",
     )
-    args = argparser.parse_args()
 
+    # Parse the command-line arguments
+    args = argparser.parse_args()
     snapshot_id = args.snapshot
 
     logging.info(
         "Beginning calculating true probabilities for snapshot #%s...",
         snapshot_id,
     )
+
+    # Compute true probabilities for the specified snapshot
     with SessionLocal.begin() as session:
         new_tprob_count = compute_true_probability_per_snapshot(session, snapshot_id)
 

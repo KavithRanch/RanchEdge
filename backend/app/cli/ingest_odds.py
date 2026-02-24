@@ -1,3 +1,11 @@
+"""
+This module provides a CLI command to ingest odds data from the OddsApi into the database.
+It allows users to specify the sport/league, markets, and sportsbooks to fetch odds for, and then processes the data to create a new OddsSnapshot and associated Events, Markets, and Prices in the database.
+
+Author: Kavith Ranchagoda
+Last Updated:
+"""
+
 import logging
 import argparse
 from app.db.session import SessionLocal
@@ -10,10 +18,12 @@ from app.constants.seed_constants import (
 
 
 def parse_args() -> argparse.Namespace:
-    argparser = argparse.ArgumentParser(
-        description="Ingest odds from OddsApi into database"
-    )
+    """Set up argument parser for CLI and return parsed arguments."""
 
+    # Set up argument parser for CLI
+    argparser = argparse.ArgumentParser(description="Ingest odds from OddsApi into database")
+
+    # Arguments to specify sport/league, markets, and sportsbooks for odds ingestion
     argparser.add_argument(
         "--sport_league",
         required=True,
@@ -41,6 +51,8 @@ def normalize_list(values: list[str] | None) -> list[str] | None:
     """Lowercase + strip; return None if empty."""
     if not values:
         return None
+
+    # Strip whitespace and convert to lowercase, filtering out empty values
     cleaned = [v.strip().lower() for v in values if v and v.strip()]
     return cleaned or None
 
@@ -49,11 +61,12 @@ def main():
     logging.basicConfig(level=logging.INFO)
     args = parse_args()
 
+    # Extract and normalize arguments
     sport_league = args.sport_league
     markets = normalize_list(args.markets) or DEFAULT_MARKETS
     sportsbooks = normalize_list(args.sportsbooks) or SPORTSBOOK_KEYS
 
-    # Validating arguments
+    # Validate that provided markets and sportsbooks are valid options
     if args.markets:
         invalid = set(markets) - set(DEFAULT_MARKETS)
         if invalid:
@@ -71,6 +84,7 @@ def main():
         sportsbooks,
     )
 
+    # Ingest odds and create snapshot in the database, logging the resulting snapshot ID and counts of inserted records
     with SessionLocal.begin() as session:
         snapshot_id, counts = ingest_odds(
             session,

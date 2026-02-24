@@ -1,6 +1,8 @@
 """
 This module is responsible for ingesting odds data from the OddsAPI and persisting it in the relevant database tables.
 It specifically creates a new OddsSnapshot entry and updates the Events, Markets, and Prices tables based on the data retrieved from the API.
+Functions:
+- ingest_odds(session, sport: str, markets: list[str], bookmakers: list[str]) -> tuple[int, dict]: Ingests odds data from the OddsAPI and persists it in the database.
 
 Author: Kavith Ranchagoda
 Last Updated:
