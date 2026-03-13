@@ -114,9 +114,16 @@ RanchEdge focuses on:
 - [ ] **v0.10.0**: Performance Dashboard
 - [ ] **v0.9.0**: Bet logging (selection/outcome)
 - [ ] **v0.8.0**: Basic UI dev (opportunities dashboard)
-- [ ] **v0.7.0**: Basic API endpoints for EV access
+- [x] **v0.7.0**: Basic API endpoints for EV access
+    * Implemented full SQL query pipeline for retrieving EV opportunities nad related info across joined tables
     * Created "Controller" Layer (router within api/v1) and Service Layer for ev opportunities endpoint
-    * Defined API Schemas to support return object for ev opportunities
+    * Created thorough JSON Response Objects (`EVOpportunityOut` and `EVOpportunitiesPage`)
+    * Defined API Schemas supporting:
+      - filtering by `league_id`, `sportsbook_id`, `min_ev`, `is_positive_ev`
+      - snapshot selection with `latest_snapshot` bool 
+      - pagination with `limit` & `offset`
+      - sorting by `ev_desc or ev_asc`, `edge_desc or edge_asc`, `start_time_asc or start_time_desc` & `pulled_at_desc oe pulled_at_asc`
+    * Added testing suite for handling different api requests
     * Updated documentation for 📄[**FastAPI**](docs/personal_learning/fastapi_info.md) with use cases 
     * Documentation for 📄[`api/v1/ev_opportunities`](backend/backend_docs/api_docs/ev_opportunities_api.md) endpoint 
     * Up-to-date documentation for my personal understanding of 📄[**APIs and their design process**](docs/personal_learning/api_design.md) 
