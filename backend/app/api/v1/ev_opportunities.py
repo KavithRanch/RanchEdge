@@ -12,7 +12,7 @@ from typing import Annotated
 from app.constants.enums import EVSortingMethod
 from app.schemas.ev_opportunities_response import EVOpportunitiesPage
 from app.services.ev_service import fetch_ev_opportunities
-from backend.app.db.session import SessionLocal
+from app.db.session import SessionLocal
 
 router = APIRouter(prefix="/api/v1/ev-opportunities", tags=["EV Opportunities"])
 
